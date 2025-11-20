@@ -36,13 +36,146 @@ A hallgatók megtanulják, hogy a szoftverfejlesztési folyamatok rugalmassága 
 * Technical debt, refactoring
 * Sprint ritmusok: planning, daily, review, retrospective
 
-## 2. Feature fejlesztési életciklus
+
+## Projektmenedzsment
+
+### Agile
+
+A dokumentum célja a termékfejlesztéssel kapcsolatos munkafolyamatok rögzítése, az eljárások lépésről-lépésre történő leírása. Jelenleg a projektmenedzsmentet támogató eszköz a YouTrack. A kialakított entitások a YouTrack adottságait használják ki, de az elvek és a munkafolyamatok általánosak és szoftverfüggetlenek.
+
+#### Globális fogalmak {#globális-fogalmak}
+
+#### Projekt {#projekt}
+
+A projekt a legfőbb alapegység számunkra. Minden projekt több issuet és boardot foglal magába. Minden projekthez egyedi mezőket rendelhetünk a feladatokhoz. Minden szoftverhez külön projektet hozunk létre, valamint egy globális projektet a több szoftverterméken átívelő funkciókhoz és problémákhoz.
+
+#### Projektek {#projektek}
+
+* **Product Development**: Ebben a projektben zajlik a termék fejlesztése, és ebben a dokumentumban a erre a projektre vonatkozó definíciókat és folyamatleírásokat értjük.
+* **Management**: Ebben a projektben kezeljük a céginformációkat és a menedzsmenttől érkező folyamatokat információs céllal.
+
+#### User (Felhasználó) {#user-felhasználó}
+
+Az alkalmazás felhasználója, azaz az a személy, aki az alkalmazást használja.
+
+#### Business (Üzleti oldal) {#business-üzleti-oldal}
+
+A termék vízióját és elvárásait megfogalmazó személy(ek), akiknek feladata a koncepciók, követelmények, nagy vonalakban felvázolt tervek és mérföldkövek meghatározása a fejlesztők számára.
+
+#### Issue (Feladat) {#issue-feladat}
+
+Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik.
+
+##### Issue típusok {#issue-típusok}
+
+* **Epic**: Egy adott téma/funkció köré szerveződő gyűjtőkártya, amely egy nagyobb egységet alkot.
+  * Segít a nagyobb kép megértésében.
+  * Tartalmazza a termékoldalról érkező összes elvárást, információt, tervet és azt, hogy mit várunk a funkció befejezésekor.
+  * Kifejezi a funkció egységes egészéből származó felhasználói élményt.
+  * Az Epic-et az alá gyűjtött Story-k befejezése után tekintjük befejezettnek.
+* **Story**: Egy Epic-hez társítható, de önálló jegytípus is.
+  * Feature kéréseket ír le, üzleti igényeket vázol fel.
+  * A technikai jegynek röviden le kell írnia, hogy mit várunk a story-tól. Ezenkívül egyértelmű és konkrét kritériumokat (Acceptance Criteria) kell meghatározni.
+  * Szükség esetén kiegészíthető tervekkel, mellékletekkel, fejlesztői jegyzetekkel stb.
+* **Task**: A Story-k alá szervezhető feladatok altípusa.
+  * Kisebb alegység, amely önmagában nem feltétlenül nyújt felhasználói élményt.
+  * A Story-t az összes benne lévő Task elvégzése után tekintjük befejezettnek.
+* **Test**: Kisebb alegység (a Task-kal egyenértékű), amely a tesztelési fázis átláthatóságát hivatott lefedni.
+* **Spike**: Olyan típus, amely nem igényel valódi implementációt, de szükséges egy adott fejlesztés összes technikai részletének feltárásához, a nehézségek meghatározásához stb.
+  * Minden Spike-hoz meg kell határozni egy kívánt eredményt, amely a Spike célját képviseli (pl. Proof of Concept).
+  * A Spike során elengedhetetlen az alapos és rendszeres dokumentáció, amelynek célja a vizsgált tárgyra (pl. Feature kérés) vonatkozó minél több részlet felderítése.
+* **Bug**: Hibajelentések típusa.
+
+#### Feature implementáció állapotai {#feature-implementáció-állapotai}
+
+Az Issue állapotai az implementációs boardon:
+* **Open**: Nyitott jegy, még nem foglalkoztak vele.
+* **In Progress**: A megoldás folyamatban van.
+* **Parking**: Elkezdtünk rajta dolgozni, de félretettük, általában egy magasabb prioritású jegy miatt.
+* **Blocked**: A jegy megoldása más jegyektől vagy külső tényezőktől való függőségek miatt nem lehetséges.
+* **In Review**: Befejezett megoldással rendelkező jegy, amely felülvizsgálatra vár egy Merge Requesten keresztül.
+* **In Test**: Befejezett és telepített megoldás, amely tesztelésre vár.
+* **Closed**: A jegy megoldódott és lezárult.
+
+#### Feature előkészítés állapotai {#feature-előkészítés-állapotai}
+
+* **Not Relevant Yet**: Érintetlen jegy, amely a jelenlegi fejlesztési szakaszban még nem releváns.
+* **Wait for Grooming**: A jelenlegi fejlesztési szakaszban releváns, megbeszélésre váró jegy.
+* **Under Grooming**: Megbeszélés, tisztázás vagy kidolgozás alatt álló jegy.
+* **Groomed**: Tisztázott/kidolgozott jegy.
+
+#### Hibák állapotai {#hibák-állapotai}
+
+* **Reported**: Jelentett jegy, amellyel még nem foglalkoztak.
+* **Incomprehensible**: Nem egyértelmű leírású jegy, amely tisztázást igényel.
+* **In Progress**: Jelenleg megoldás alatt álló jegy.
+* **Not Reproducible**: A jegyben jelentett hibát nem sikerült reprodukálni, vagy valamilyen más okból már nem reprodukálható.
+* **Fixed**: A jegyet javították, de még nem ellenőrizték.
+* **Closed**: Javított, ellenőrzött és lezárt jegy.
+
+#### Roadmap {#roadmap}
+
+A Roadmap egy magas szintű, vizuális terv, amely bemutatja a termékfejlesztés hosszú távú irányát és a tervezett főbb funkciók, mérföldkövek kiadási ütemezését. Segít összehangolni az üzleti célokat a fejlesztési kapacitással, és kommunikációs eszköz a stakeholderek felé.
+
+#### Backlogok
+
+Minden olyan Issue, amely nem szerepel a boardon, a Backlogba kerül. A board felületén van lehetőség a backlog megnyitására és a jegyek áthelyezésére a boardra. A backlog minden boardhoz egyedi lekérdezések alapján működik, és ez a lekérdezés az igényeknek megfelelően módosítható.
+
+#### Product Backlog
+
+A Product Backlog egy priorizált lista, amely tartalmaz minden, a termékkel kapcsolatos követelményt, funkciót, javítást és feladatot. A Product Owner felelős a karbantartásáért. Ez a lista dinamikus, folyamatosan változik az üzleti igények és a piaci visszajelzések alapján.
+
+#### Sprint Backlog
+
+A Sprint Backlog a Product Backlogból kiválasztott elemek halmaza, amelyeket a fejlesztőcsapat a következő sprint során fog megvalósítani. A Sprint Planning során a csapat közösen állítja össze, és a sprint ideje alatt már nem bővíthető, csak a meglévő feladatok elvégzésére fókuszálnak.
+
+#### Definition of Ready (DoR)
+
+A DoR egy ellenőrzőlista, amely meghatározza, hogy egy User Story-nak vagy feladatnak milyen kritériumoknak kell megfelelnie ahhoz, hogy a csapat be tudja venni a sprintbe. Biztosítja, hogy a feladatok jól definiáltak, érthetőek és megvalósíthatóak legyenek, minimalizálva a sprint közbeni kérdéseket.
+
+#### Definition of Done (DoD)
+
+A Definition of Done (DoD) egy fogalom, amelyet az agilis szoftverfejlesztési módszertanokban, különösen a Scrumban használnak. Meghatározza azokat a kritériumokat, amelyeknek egy terméknövekménynek vagy felhasználói történetnek meg kell felelnie ahhoz, hogy teljesnek és kiadásra késznek tekintsék. A DoD segít biztosítani, hogy a fejlesztőcsapat, az érdekelt felek és az ügyfelek közösen értsék, mi minősül befejezett és magas minőségű munkának.
+1. A kód működik a helyi környezetben
+A fejlesztő felelőssége, hogy a kód a saját gépén megfelelően működjön. Ez magában foglalja a szükséges infrastruktúra beállítását is.
+2. Az elfogadási kritériumok teljesültek
+A fejlesztőnek biztosítania kell, hogy a feladat megfeleljen az aktuális JIRA jegyben rögzített összes elfogadási kritériumnak.
+3. A közös rétegszerkezet teljesült
+A fejlesztőnek követnie kell a Backend Development Guideline és Frontend Development Guideline dokumentumokban leírtakat.
+4. A kapcsolódó OpenAPI definíciók megírva
+A fejlesztő felelőssége, hogy az OpenAPI in layers dokumentációnak megfelelően elkészítse a szükséges OpenAPI definíciókat.
+5. A kapcsolódó Unit tesztek megírva
+A fejlesztőnek a PHP testing/Pest útmutató alapján kell elkészítenie a unit teszteket.
+6. A kapcsolódó E2E tesztek megírva
+A tesztelő feladata, hogy a funkcióhoz kapcsolódó end-to-end teszteket megírja.
+7. A kód felülvizsgálva
+A vezető fejlesztőnek a GIT Workflow Guideline alapján felül kell vizsgálnia a kódot.
+8. A kapcsolódó unit tesztek átmentek a pipeline-on
+A fejlesztő felelőssége, hogy a unit tesztek sikeresen lefussanak a CI/CD pipeline-on.
+9. A kapcsolódó E2E tesztek átmentek a pipeline-on
+A fejlesztő felelőssége, hogy az end-to-end tesztek sikeresen lefussanak a CI/CD pipeline-on.
+10. A kód működik a fejlesztői környezetben (develop branch)
+A fejlesztőnek biztosítania kell, hogy a kód a Hetzner Development Infrastructure\-nek megfelelően működjön a develop branchen.
+11. A kapcsolódó manuális tesztek teljesültek
+A tesztelő feladata, hogy elvégezze a szükséges manuális teszteket.
+12. A dokumentáció frissítve
+A fejlesztőnek a Document Maintenance útmutató alapján frissítenie kell a dokumentációt.
+
+#### User Story
+
+Egy rövid, egyszerű leírás egy funkcióról a felhasználó szemszögéből. A tipikus formátuma: "Mint egy \<felhasználó típus\>, szeretnék \<célt elérni\>, hogy \<értéket kapjak\>." A User Story segít a csapatnak a felhasználói igényekre fókuszálni.
+
+#### Acceptance Criteria
+
+Azok a konkrét, tesztelhető feltételek, amelyeknek egy User Story-nak teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
+
+### 2. Feature fejlesztési életciklus
 
 A szoftverfejlesztési életciklus (Software Development Life Cycle – SDLC) egy strukturált folyamat, amely a szoftver tervezésétől, fejlesztésétől és tesztelésétől a telepítésen át a karbantartásig terjed. A ciklus fő szakaszai a követelményanalízis, tervezés, implementáció, tesztelés, telepítés (deployment) és karbantartás. A modern, agilis megközelítések ezeket a szakaszokat rövid, iteratív ciklusokban ismétlik, lehetővé téve a rugalmas alkalmazkodást a változó igényekhez.
 
 Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósíthat meg egy új funkciót a szoftvertermékeinkben.
 
-### 2.1. Résztvevők
+#### 2.1. Résztvevők
 
 * **Business**
 * **SCRUM Team**
@@ -53,7 +186,6 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Test Automation Expert**
 * **DevOps Expert**
 
-### 2.2. Életciklus
 
 #### 2.2.1. Specifikáció
 
@@ -77,7 +209,7 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Felülvizsgáló**: SCRUM csapat
 * **Kapcsolódó dokumentumok**: Issue Specification Guideline
 
-### 3.3. Implementáció előkészítése
+#### 3.3. Implementáció előkészítése
 
 **Közös tervezési ülés és Grooming**
 
@@ -112,7 +244,7 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Leírás**: Ha a funkcióigény megfelel a Definition of Done-nak, a DevOps szakértő vagy a SCRUM csapat telepíti azt az éles környezetbe. A kiadás után a QA szakértő ellenőrzi a funkciót az éles környezetben is, és ha problémát talál, szól a fejlesztőknek.
 * **Felelős Személy**: SCRUM csapat, DevOps szakértő, QA szakértő, Terméktulajdonos
 
-#### 4.3.2. 5.3.4 kiadás után
+#### 4.3.2. kiadás után
 
 **Marketing**
 
@@ -121,6 +253,7 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 **Nyomon követés**
 * **Leírás**: Ellenőrizze a Mixpanel és a Hotjar eredményeket, foglalja össze, és hozzon létre egy funkcióigényt (FR). Kezelje a BÉTA teszteket és a funkciózászlókat.
 * **Felelős Személy**: Elsődleges: Terméktulajdonos, Másodlagos: Üzlet és Terméktervező
+
 
 ## 3. UX/UI tervezés
 
@@ -510,4 +643,5 @@ A riasztások proaktívan értesítik az üzemeltető csapatot, ha a rendszerben
 ## 11. Technikai adósság és refaktorálás
 
 A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát. A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
+
 
