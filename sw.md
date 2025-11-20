@@ -43,30 +43,30 @@ A hallgatók megtanulják, hogy a szoftverfejlesztési folyamatok rugalmassága 
 
 A dokumentum célja a termékfejlesztéssel kapcsolatos munkafolyamatok rögzítése, az eljárások lépésről-lépésre történő leírása. Jelenleg a projektmenedzsmentet támogató eszköz a YouTrack. A kialakított entitások a YouTrack adottságait használják ki, de az elvek és a munkafolyamatok általánosak és szoftverfüggetlenek.
 
-#### Globális fogalmak {#globális-fogalmak}
+#### Globális fogalmak
 
-#### Projekt {#projekt}
+#### Projekt
 
 A projekt a legfőbb alapegység számunkra. Minden projekt több issuet és boardot foglal magába. Minden projekthez egyedi mezőket rendelhetünk a feladatokhoz. Minden szoftverhez külön projektet hozunk létre, valamint egy globális projektet a több szoftverterméken átívelő funkciókhoz és problémákhoz.
 
-#### Projektek {#projektek}
+#### Projektek
 
 * **Product Development**: Ebben a projektben zajlik a termék fejlesztése, és ebben a dokumentumban a erre a projektre vonatkozó definíciókat és folyamatleírásokat értjük.
 * **Management**: Ebben a projektben kezeljük a céginformációkat és a menedzsmenttől érkező folyamatokat információs céllal.
 
-#### User (Felhasználó) {#user-felhasználó}
+#### User (Felhasználó)
 
 Az alkalmazás felhasználója, azaz az a személy, aki az alkalmazást használja.
 
-#### Business (Üzleti oldal) {#business-üzleti-oldal}
+#### Business (Üzleti oldal)
 
 A termék vízióját és elvárásait megfogalmazó személy(ek), akiknek feladata a koncepciók, követelmények, nagy vonalakban felvázolt tervek és mérföldkövek meghatározása a fejlesztők számára.
 
-#### Issue (Feladat) {#issue-feladat}
+#### Issue (Feladat)
 
 Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik.
 
-##### Issue típusok {#issue-típusok}
+##### Issue típusok
 
 * **Epic**: Egy adott téma/funkció köré szerveződő gyűjtőkártya, amely egy nagyobb egységet alkot.
   * Segít a nagyobb kép megértésében.
@@ -86,7 +86,7 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
   * A Spike során elengedhetetlen az alapos és rendszeres dokumentáció, amelynek célja a vizsgált tárgyra (pl. Feature kérés) vonatkozó minél több részlet felderítése.
 * **Bug**: Hibajelentések típusa.
 
-#### Feature implementáció állapotai {#feature-implementáció-állapotai}
+#### Feature implementáció állapotai
 
 Az Issue állapotai az implementációs boardon:
 * **Open**: Nyitott jegy, még nem foglalkoztak vele.
@@ -97,14 +97,14 @@ Az Issue állapotai az implementációs boardon:
 * **In Test**: Befejezett és telepített megoldás, amely tesztelésre vár.
 * **Closed**: A jegy megoldódott és lezárult.
 
-#### Feature előkészítés állapotai {#feature-előkészítés-állapotai}
+#### Feature előkészítés állapotai
 
 * **Not Relevant Yet**: Érintetlen jegy, amely a jelenlegi fejlesztési szakaszban még nem releváns.
 * **Wait for Grooming**: A jelenlegi fejlesztési szakaszban releváns, megbeszélésre váró jegy.
 * **Under Grooming**: Megbeszélés, tisztázás vagy kidolgozás alatt álló jegy.
 * **Groomed**: Tisztázott/kidolgozott jegy.
 
-#### Hibák állapotai {#hibák-állapotai}
+#### Hibák állapotai
 
 * **Reported**: Jelentett jegy, amellyel még nem foglalkoztak.
 * **Incomprehensible**: Nem egyértelmű leírású jegy, amely tisztázást igényel.
@@ -113,7 +113,7 @@ Az Issue állapotai az implementációs boardon:
 * **Fixed**: A jegyet javították, de még nem ellenőrizték.
 * **Closed**: Javított, ellenőrzött és lezárt jegy.
 
-#### Roadmap {#roadmap}
+#### Roadmap
 
 A Roadmap egy magas szintű, vizuális terv, amely bemutatja a termékfejlesztés hosszú távú irányát és a tervezett főbb funkciók, mérföldkövek kiadási ütemezését. Segít összehangolni az üzleti célokat a fejlesztési kapacitással, és kommunikációs eszköz a stakeholderek felé.
 
@@ -279,7 +279,7 @@ A rétegzett architektúra támogatja a "decision postponement" elvét, azaz a d
 
 A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, adatvalidációra, valamint a rétegek és szervizosztályok közötti tiszta be- és kimenet biztosítására szolgálnak. Segítenek elkerülni a "code smell"-eket, mint például a túl sok (háromnál több) bemeneti argumentumot vagy a tuple visszatérési értékeket. Implementációjuk nyelvenként változó: PHP-ban osztályok, TypeScriptben interfészek, Pythonban (Pydantic) osztályok, C-ben, Go-ban és Rustban pedig structok formájában valósulnak meg. A DTO-k átjáróként funkcionálnak a rétegek között, csak a szükséges adatokat továbbítják, csökkentve a "zajt" és segítve a fókuszt. Ahogy Robert C. Martin (Uncle Bob) mondja: "Keep the DTOs simple\!" (Tartsd a DTO-kat egyszerűnek\!).
 
-### Függőséginjektálás (dependency injection - DI)
+### Függőségkezelés (Dependency Injection - DI)
 
 A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
 
@@ -339,13 +339,10 @@ A Build, Test, Deploy pipeline a CI/CD folyamat gerince. Ez egy automatizált l�
 
 * **apps**: Szolgáltatás alkalmazásokat tartalmaz \_service utótaggal és frontend alkalmazásokat \_frontend utótaggal. Ha nincs előtag, a mappa régebbi vagy potenciálisan örökölt projekteket tartalmazhat.
 * **libs**: Megosztott könyvtárakat tartalmaz.
-* **e2e**: End-to-end tesztcsomagokat tartalmaz.
-* **infrastructure**: Infrastruktúra konfigurációs fájlokat tartalmaz.
-* **database**: Adatbázis migrációs eszközöket (Liquibase) tartalmaz.
 
 ### Branching stratégia
 
-#### Branch nevek előtagjai:
+#### Branch nevek előtagjai
 
 * feature/: Specifikus feladatokhoz kapcsolódó branchek.
 * epic/: Nagyobb fejlesztésekhez nyitott branchek, amelyek egy projektcímkével ellátott epichez kapcsolódnak.
