@@ -242,107 +242,6 @@ Egy rövid, egyszerű leírás egy funkcióról a felhasználó szemszögéből.
 
 Azok a konkrét, tesztelhető feltételek, amelyeknek egy User Story-nak teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
 
-## 4.6. Jegy életciklusa
-
-1. Ellenőrizzük, hogy létezik-e már jegy az adott feladathoz.
-2. Ha igen:
-   1. Információt gyűjtünk a létrehozótól a jegy céljáról 1-2 mondatban.
-   2. Rögzítjük a leírás mezőben.
-   3. Megjelöljük a pre-groomed címkével.
-   4. Megállapítjuk, hogy egy Epic-hez vagy egy Story-hoz tartozik-e; szükség esetén módosítjuk.
-3. Végigmegyünk a Grooming boardon.
-4. Meghatározzuk, hogy melyik mérföldkő részét kell képeznie.
-5. Ha jelenleg aktív, áthelyezzük az Implementációs boardra.
-6. A jegy tulajdonosa itt felügyeli a megvalósítási folyamatot.
-
-Jegy létrehozása
-Feature Request (Funkciókérés)
-Új funkció létrehozása vagy egy meglévő, jól működő funkció módosítása.
-
-* **Issue Type**: Story
-* **Egyedi mezők**:
-  * **Acceptance Criteria**: A feladat átfogó és pontos leírása.
-  * **Attached UI design or Workflow diagram (Mellékletek)**: szükség esetén és/vagy rendelkezésre állás esetén.
-  * **Developer Notes**: Opcionális fejlesztői jegyzetek.
-
-*Létrehozás*
-
-1. Megnyitjuk az New Issue űrlapot.
-2. Kitöltjük a Summary mezőt, amely a Feature Request címe lesz.
-3. A Type mezőt Story\-ra változtatjuk.
-4. A Grooming State mezőt Waiting for Grooming\-ra állítjuk.
-5. Ha már tudjuk, ki fogja kezelni a jegyet, megjelöljük az Assignee mezőben.
-6. Az "Add to board" gombbal hozzáadjuk a Grooming boardhoz.
-7. A Description mezőbe rövid összefoglalót írunk a jegyről.
-8. Az Acceptance Criteria mezőben leírjuk a konkrét követelményeket.
-9. Ha rendelkezésre áll, csatoljuk a tervfájlokat a Attachments részben.
-*Grooming*
-1. A Grooming State mezőt Under Grooming\-ra változtatjuk.
-2. A részleteket a jegy kommentelési lehetőségén keresztül vitatjuk meg.
-3. A konklúziókat az Acceptance Criteria mezőben gyűjtjük össze.
-4. Ha kidolgoztuk a jegyet, a Grooming State mezőt Groomed\-ra helyezzük.
-*Implementációra való felkészülés*
-1. Eltávolítjuk a jegyet a Grooming boardról.
-2. Hozzáadjuk az Implementációs boardhoz.
-3. Eltávolítjuk az értéket a Grooming State mezőből (No grooming state).
-4. Az State mezőt Open\-re állítjuk.
-5. Véglegesítjük a felelőst (Assignee).
-*Implementáció*
-1. A munka elején a State\-et In Progress\-re változtatjuk.
-2. A feladat befejezése és a Merge Request létrehozása után In Review\-ra állítjuk.
-3. Miután a felülvizsgáló behúzta a Merge Requestet, tájékoztatja a felelőst.
-4. A felelős telepíti és In Test\-re helyezi.
-5. A tesztelő In Test\-ről Closed\-ra helyezi.
-6. Ha a felülvizsgálat vagy a tesztelés során hiba merül fel, a jegy visszakerül In Progress\-be.
-7. Ha egy jegy blokkol egy másik jegyet a befejezésben, a felelős Blocked\-ba helyezi. Itt könnyen elérhetőnek kell lennie az információnak, mivel a grooming folyamaton már átesett.
-8. Ha ez nem történik meg, helyezzük vissza a Grooming boardra, és állítsuk a Grooming State\-et Under Grooming\-ra (miközben az Implementációs boardon tartjuk a Blocked állapottal).
-9. Ha egy másik jegynek magasabb a prioritása, és 3 napon belül nem tudunk foglalkozni a jeggyel, helyezzük Parking\-ba.
-
-### 4.6.1. Bug Report (Hibajelentés)
-
-Egy meglévő, hibásan működő funkció javítása.
-* **Egyedi mezők**:
-  * **Logged-in User**: A problémát tapasztaló felhasználó e-mail címe.
-  * **Mobile Platform**: Legördülő lista: iOS vagy Android.
-  * **Version of Mobile OS**: Az iOS/Android verziószáma.
-  * **Version of Mobile Application**: A projekt mobilalkalmazásának verziószáma.
-  * **Version of Firmware**: Az eszközön futó firmware verziószáma.
-  * **Excepted Behavior**: Az elvárt viselkedés leírása.
-  * **Current Behavior**: A jelenlegi (hibás) viselkedés leírása.
-  * **Steps for Reproduction**: A hiba reprodukálásához szükséges lépések leírása.
-  * **Developer Notes**: Opcionális fejlesztői jegyzetek.
-
-*Létrehozás*
-
-1. Megnyitjuk az New Issue űrlapot.
-2. Kitöltjük a Summary mezőt, amely a Bug Report címe lesz.
-3. A Type mezőt Bug\-ra változtatjuk.
-4. A Bug State mezőt Reported\-re állítjuk.
-5. Ha már tudjuk, ki fogja kezelni a jegyet, megjelöljük az Assignee mezőben.
-6. Az "Add to board" gombbal hozzáadjuk a Bugs boardhoz.
-7. A Description mezőbe rövid összefoglalót írunk a jegyről.
-8. Az Acceptance Criteria mezőben leírjuk a konkrét követelményeket.
-9. Az Expected Behavior mezőben leírjuk az elvárt (jó) viselkedést.
-10. A Current Behavior mezőben leírjuk a jelenlegi (rossz) viselkedést.
-11. Lépésről lépésre elmagyarázzuk, hogyan lehet reprodukálni a hibát a Steps for Reproduction mezőben.
-12. Ha rendelkezésre áll, csatoljunk képernyőképeket vagy fotókat a Attachments részben.
-13. Adjuk meg a metaadatokat:
-    * Bejelentkezett felhasználó
-    * Mobil platform
-    * Mobil OS verziója
-    * Mobilalkalmazás verziója
-    * Firmware verziója
-
-*Életciklus*
-
-1. A jegy a Reported Bug állapottal kezdődik.
-2. Ha a felelős elkezdi a munkát a jegyen, In Progress\-be kerül.
-3. Miután befejeződött, Fixed\-re állítjuk.
-4. Ha a jelentő megerősíti, hogy javítva van, Closed\-ba kerül.
-5. **Különleges esetek**:
-   * Incomprehensible\-be kerül, ha a felelős nem érti a hibát.
-   * Not Reproducible\-be kerül, ha megpróbáltuk és nem tudtuk reprodukálni a hibát.
-
 # 5. Feature Fejlesztési Életciklus
 
 Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósíthat meg egy új funkciót a szoftvertermékeinkben.
@@ -360,50 +259,70 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 
 ## 5.2. Életciklus
 
-## 5.3. Specifikáció
+### 5.3.1. Specifikáció
 
-**Lépés: Üzleti igények**
+**Üzleti igények**
+
 * **Leírás**: Fel kell fedeznünk a felhasználói igényeket és le kell írnunk egy funkcióigényt (FR), amely üzleti értéket képvisel. Ez a lépés egy üzleti döntés, amely nem tartozik a dokumentum hatálya alá. Az üzleti igény megléte előfeltétel.
 * **Felelős Személy**: Elsődleges: Üzlet, Másodlagos: Terméktervező
 * **Kapcsolódó dokumentumok**: Feature Creation Process Guideline
-**Lépés: Tervezés**
+
+**Tervezés**
+
 * **Leírás**: A tervező feladata, hogy együtt érezzen a felhasználói igényekkel, kidolgozza a felhasználói perszónákat, és olyan terveket készítsen, amelyek megoldják a felhasználó problémáit. A tervek ellenőrzése használhatósági tesztekkel. A terméktulajdonos felelős a statisztikai eszközök (Mixpanel, Hotjar) összekapcsolásáért.
 * **Felelős Személy**: Elsődleges: Terméktervező, Másodlagos: Terméktulajdonos
 * **Felülvizsgáló**: Elsődleges: Üzlet, Másodlagos: Mérnöki csapatvezető
 * **Kapcsolódó dokumentumok**: Product Design Development Guideline
-**Lépés: Műszaki specifikáció**
+
+**Műszaki specifikáció**
+
 * **Leírás**: A mérnöki csapatvezető kidolgozza az FR műszaki részleteit (egy Epic-ben), és a munka részeit story-kra bontja.
 * **Felelős Személy**: Mérnöki csapatvezető
 * **Felülvizsgáló**: SCRUM csapat
 * **Kapcsolódó dokumentumok**: Issue Specification Guideline
-Implementáció előkészítése
-**Lépés: Közös tervezési ülés és Grooming**
+
+## 5.3.2. Implementáció előkészítése
+
+**Közös tervezési ülés és Grooming**
+
 * **Leírás**: A SCRUM csapatnak át kell néznie a story-kat a Grooming előtt, és segítenie kell azok kiterjesztésében és tisztázásában a jobb megértés és a gördülékenyebb Grooming megbeszélés érdekében.
 * **Felelős Személy**: SCRUM csapat
 * **Kapcsolódó dokumentumok**: SCRUM Meeting Types | Grooming Meeting
-**Lépés: Prioritizálás**
+
+**Prioritizálás**
+
 * **Leírás**: A megbeszélt és időbecsült feladatokat a terméktulajdonosnak kell priorizálnia. Ebben a lépésben a terméktulajdonos dönti el, hogy a következő sprint tartalmazhatja-e a feladatot. A terméktulajdonos tájékoztatja a marketinget és kitölti a termékkiadási egyoldalast.
 * **Felelős Személy**: Terméktulajdonos
 * **Felülvizsgáló**: Üzlet
 * **Kapcsolódó dokumentumok**: Product Release Process
-Implementáció
-**Lépés: Kódolás**
+
+### 5.3.3. Implementáció
+
+**Kódolás**
+
 * **Leírás**: Programozás: A fejlesztő a programozási irányelveinkkel együtt módosításokat hajt végre a szoftverben. Kódellenőrzés: Hozzon létre egy pull requestet, amelyet a mérnöki csapatvezetőnek kell felülvizsgálnia és jóváhagynia.
 * **Felelős Személy**: Fejlesztő
 * **Felülvizsgáló**: Mérnöki csapatvezető
 * **Kapcsolódó dokumentumok**: Backend Development Guideline, Technology Stack
-**Lépés: Tesztelés**
+
+**Tesztelés**
+
 * **Leírás**: Az egységteszteket a fejlesztő hozza létre, a manuális tesztdokumentációt pedig a QA szakértő. Az implementáció vége akkor érhető el, ha megfelel a DoD-nek (Definition of Done).
 * **Felelős Személy**: SCRUM csapat, QA szakértő
 * **Kapcsolódó dokumentumok**: Definition of Done
-**Lépés: Kiadás**
+
+**Kiadás**
+
 * **Leírás**: Ha a funkcióigény megfelel a Definition of Done-nak, a DevOps szakértő vagy a SCRUM csapat telepíti azt az éles környezetbe. A kiadás után a QA szakértő ellenőrzi a funkciót az éles környezetben is, és ha problémát talál, szól a fejlesztőknek.
 * **Felelős Személy**: SCRUM csapat, DevOps szakértő, QA szakértő, Terméktulajdonos
-Kiadás után
-**Lépés: Marketing**
+
+### 5.3.4 Kiadás után
+
+**Marketing**
+
 * **Leírás**: A terméktulajdonos tájékoztatja a marketing csapatot, hogy a funkció elkészült.
 * **Felelős Személy**: Üzlet
-**Lépés: Nyomon követés**
+**Nyomon követés**
 * **Leírás**: Ellenőrizze a Mixpanel és a Hotjar eredményeket, foglalja össze, és hozzon létre egy funkcióigényt (FR). Kezelje a BÉTA teszteket és a funkciózászlókat.
 * **Felelős Személy**: Elsődleges: Terméktulajdonos, Másodlagos: Üzlet és Terméktervező
 
@@ -516,25 +435,36 @@ A Build, Test, Deploy pipeline a CI/CD folyamat gerince. Ez egy automatizált l�
 ### 9.2.3. Rebase
 
 A feature branchekben rebase módszert alkalmazunk.
-* **Checkout feature branch:**
-  git checkout \<feature branch\>
-1. 
-* **Commitok squasholása:**
-  git rebase \-i HEAD\~\<saját commitok száma\>
-2. 
-* **Squasholt feature branch pusholása:**
-  git push \--force-with-lease
-3. 
-* **Forrás branch checkout és pull:**
-  git checkout \<epic branch vagy develop\>
-* git pull
-4. 
-* **Feature branch checkout és rebase:**
-  git checkout \<feature branch\>
-* git rebase \<epic branch vagy develop\>
-* git push \--force-with-lease
-5. 
-   Ha van egy szülő branched, ami nem a develop (például epic/...), akkor a feature branchedet arra kell rebase-elned\! Előtte pedig a szülő branchedet kellene rebase-elned a develop\-ra.
+
+**1. Checkout feature branch:**
+```bash
+git checkout <feature branch>
+```
+
+**2. Commitok squasholása:**
+```bash
+git rebase -i HEAD~<saját commitok száma>
+```
+
+**3. Squasholt feature branch pusholása:**
+```bash
+git push --force-with-lease
+```
+
+**4. Forrás branch checkout és pull:**
+```bash
+git checkout <epic branch vagy develop>
+git pull
+```
+
+**5. Feature branch checkout és rebase:**
+```bash
+git checkout <feature branch>
+git rebase <epic branch vagy develop>
+git push --force-with-lease
+```
+
+> Ha van egy szülő branched, ami nem a develop (például epic/...), akkor a feature branchedet arra kell rebase-elned! Előtte pedig a szülő branchedet kellene rebase-elned a develop-ra.
 
 ## 9.3. Feature Branch Életciklusa
 
@@ -613,61 +543,156 @@ Az üzemeltetés és monitoring célja a szoftver stabil és megbízható műkö
 ## 13.1. Observability
 A megfigyelhetőség (observability) egy rendszer azon képessége, hogy a külső kimenetei (logok, metrikák, trace-ek) alapján megérthető legyen a belső állapota. Nem csupán a "mi romlott el?" kérdésre ad választ, hanem a "miért?"-re is, segítve a komplex, elosztott rendszerek hibakeresését.
 
-## 13.2. Logs
+## 13.2. Naplófájlok
+
+Az általános naplófájlok a szoftver működésének nyomon követésére és hibakeresésre szolgálnak. Ezek rögzítik az alkalmazás eseményeit, hibáit, figyelmeztetéseit és egyéb diagnosztikai információkat.
+
+### 13.2.1. Célja
+
+A naplófájlok elsődleges céljai:
+
+* **Hibakeresés** - Problémák diagnosztizálása és elemzése
+* **Teljesítményfigyelés** - Rendszer teljesítményének monitorozása
+* **Üzemeltetési információ** - Alkalmazás működésének követése
+* **Fejlesztői támogatás** - Kód viselkedésének megértése
+* **Rendszer-terhelés elemzése** - Erőforrás-használat nyomon követése
+
+### 13.2.2. Érzékeny adatok szűrése
+
+A naplófájlokban soha ne szerepeljenek érzékeny információk:
+
+* **Jelszavak és API kulcsok** - Titkos hitelesítési adatok
+* **Személyes adatok** - Neveik, e-mail címek, telefonszámok
+* **Fizetési információk** - Bankkártya számok, tranzakciós adatok
+* **Üzleti titkok** - Vásárlói adatok, szerződéses információk
+* **Biometrikus adatok** - Ujjlenyomatok, arcfelismerési adatok
+
+**Ajánlás:** Maszkírozz érzékeny adatokat a naplóban (pl. `***` vagy `[REDACTED]`)
+
+### 13.2.3. Rotáció
+
+A naplófájlok kezelésének legjobb gyakorlatai:
+
+* **Méret alapú rotáció** - Fájl eléri az X MB-ot → új fájl
+* **Idő alapú rotáció** - Napi/heti/havi ciklus
+* **Tömörítés** - Régi logok ZIP/GZIP formátumba
+* **Archiválás** - Hosszú távú tárolás külön helyre
+* **Törlési politika** - X hónap után végleges törlés
+
+### 13.2.4. EFK Stack
+
+Az **EFK Stack** (Elasticsearch, Fluent, Kibana) egy népszerű megoldás a logok központi gyűjtésére:
+
+* **Elasticsearch** - Elosztott kereső- és analitikai motor
+  * Gyors szöveges keresés
+  * Valós idejű indexelés
+  * Magas rendelkezésre állás
+
+* **Fluent** (Fluentd) - Naplófeldolgozó és -továbbító
+  * Több forrásból gyűjt logokat
+  * Szűrés és átalakítás
+  * Flexibilis routing
+
+* **Kibana** - Vizualizációs és analitikai felület
+  * Dashboard készítés
+  * Logok böngészése és keresése
+  * Valós idejű monitorozás
+
+## 13.3. Audit trail
 
 Az audit trail (auditnapló) egy olyan naplózási mechanizmus, amely időrendi sorrendben rögzíti a rendszerben bekövetkező eseményeket és változásokat (munkafolyamatokba rendezve). Célja a felhasználói és rendszertevékenységek nyomon követhető és ellenőrizhető módon történő dokumentálása.
 
-Célok és előnyök
+### 13.3.1. Célok és előnyök
 
-A fő célok a következők: a nyomon követhetőség, a biztonság és a megfelelőség (GDPR, ISO27001, PCI-DSS, NIS2), valamint a hibaelhárítás és az incidenskezelés. Az előnyök közé tartozik az átláthatóság, az adatintegritás, valamint a megelőzhető csalás és a jogosulatlan módosítások vagy váratlan viselkedés.
+A fő célok a következők:
+* **Nyomon követhetőség** - Felhasználói és rendszertevékenységek rögzítése
+* **Biztonság és megfelelőség** - GDPR, ISO27001, PCI-DSS, NIS2 szabványok betartása
+* **Hibaelhárítás és incidenskezelés** - Gyors problémamegoldás
 
-Jogi követelmények
+Az előnyök közé tartozik:
+* Átláthatóság a rendszer működésében
+* Adatintegritás biztosítása
+* Megelőzhető csalás és jogosulatlan módosítások
+* Váratlan viselkedés azonosítása
+
+### 13.3.2. Jogi követelmények
 
 Több szabvány és irányelv is előírja az auditnaplózást:
 
-* **ISO 27001 (Információbiztonsági Irányítási Rendszer \- ISMS)**: Előírja a naplózást és a monitorozást, és kimondja, hogy az auditnaplónak sértetlennek és hozzáférhetőnek kell maradnia.
-* **PCI DSS (Payment Card Industry Data Security Standard)**: A kártyás és tranzakciós feldolgozásra vonatkozó követelmények, amelyek részletes felhasználói műveletnaplózást, a naplófájlok titkosítását és manipuláció elleni védelmét, valamint a naplók legalább egyéves megőrzését írják elő, amelyből három hónapnak hozzáférhetőnek kell lennie.
-* **NIS 2 (Hálózati és Információbiztonsági Irányelv 2\)**: Előírja a biztonsági események naplózását és monitorozását, és 2024\. október 18-tól hatályos. Az auditnaplók segítik a biztonsági incidensek gyors azonosítását és a reagálás megkönnyítését, valamint biztosítják a jogosulatlan hozzáférések nyomon követését és megelőzését.
-Az auditnapló és a hagyományos napló közötti különbség
-Fontos megjegyezni, hogy az auditnapló nem azonos a hagyományos naplóval, és nem helyettesíti azt. A fő különbségek a következők:
-* **Cél**: A hagyományos naplózás általános hibakeresésre, teljesítménymonitorozásra és hibakövetésre szolgál, míg az auditnapló a biztonság, a megfelelőség és a kritikus változások nyomon követését biztosítja.
-* **Hatókör**: A hagyományos napló információs üzeneteket, hibákat, alkalmazásviselkedést és működési adatokat rögzít, míg az auditnapló a felhasználói és rendszer-műveleteket, az érzékeny adatok módosításait és a hozzáférési rekordokat.
-* **Megőrzési politika**: A hagyományos naplókat gyakran korlátozott ideig őrzik meg a teljesítményigények alapján, míg az auditnaplókat hosszú ideig, a megfelelőségi és jogi követelményeknek megfelelően.
-* **Struktúra**: A hagyományos naplók lehetnek strukturálatlanok vagy félig strukturáltak (pl. nyers szöveg, JSON), míg az auditnaplók magasan strukturáltak, részletes metaadatokkal.
-Mit tartalmaz pontosan az auditnapló?
-Az auditnaplónak a következő kérdésekre kell választ adnia: Ki? Mit? Mikor? Hol? Az alapvető entitások a következők:
-* **Level**: A napló szintje (pl. INFO, WARN, ERROR).
-* **CreatedAt**: A naplóbejegyzés időbélyege.
-* **TraceId**: A munkafolyamat egyedi azonosítója.
-* **Workflow Name**: A munkafolyamat neve.
-* **User**: A felhasználó adatai (ID, Email).
-* **Resource**: Az erőforrás adatai (EntityName, EntityID).
-* **Operation**: A művelet adatai (Action, Changes \- Previous, Current).
-* **Metadata**: Metaadatok (UserAgent, GeoLocation).
-Nyomkövetés (Tracing)
-A **TraceID** egy egyedi azonosító, amely egy kérés vagy tranzakció teljes életciklusát követi nyomon egy elosztott rendszerben, lehetővé téve a kapcsolódó naplók és események összekapcsolását. A TraceID egy UUID, amelyet a munkafolyamat belépési pontján generálnak, és a fejlécekben (HTTP és AMQP) továbbítanak (X-Trace-Id). Automatikusan továbbítódik minden belső kéréssel, minden naplóbejegyzés részét képezi, és kereshető.
-A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakciós egységet képvisel egy elosztott rendszeren belül. Míg a TraceID a teljes kérésfolyamatot követi nyomon, a SpanID egy adott lépést vagy komponens-végrehajtást azonosít egy adott nyomvonalon belül. Egyetlen nyomvonal több spant is tartalmazhat, amelyek hierarchikusan vagy szekvenciálisan strukturálhatók.
-*Implementáció*
-A bemutatott verem (stack) a következő technológiákat tartalmazza:
-* **Fluent Bit**: Naplófeldolgozó és \-továbbító.
-* **OpenSearch**: Elosztott, RESTful kereső- és analitikai motor.
-* **Kibana**: Adatvizualizációs műszerfal az OpenSearch-höz.
-Az OpenSearch kulcsfogalmai a következők:
-* **Cluster**: Több OpenSearch csomópontból álló rendszer.
-* **Node**: Az OpenSearch egy példánya, amely a klaszter része.
-* **Index**: Logikai egység, amely adatokat tárol (hasonlóan egy relációs adatbázis táblájához).
-* **Shard**: Egy index több részre osztása a skálázhatóság érdekében.
-* **Document**: Egy indexen belül tárolt egyedi adatobjektum (hasonlóan egy relációs adatbázis sorához).
+* **ISO 27001 (Információbiztonsági Irányítási Rendszer - ISMS)** - Előírja a naplózást és a monitorozást, az auditnaplónak sértetlennek és hozzáférhetőnek kell maradnia.
+* **PCI DSS (Payment Card Industry Data Security Standard)** - Részletes felhasználói műveletnaplózás, naplófájlok titkosítása, manipuláció elleni védelem, legalább egyéves megőrzés (három hónapnak hozzáférhetőnek kell lennie).
+* **NIS 2 (Hálózati és Információbiztonsági Irányelv 2)** - Biztonsági események naplózása és monitorozása (hatályos: 2024. október 18-tól). Segíti a biztonsági incidensek gyors azonosítását és jogosulatlan hozzáférések megelőzését.
 
-## 13.3. Metrics
+### 13.3.3. Auditnapló vs. hagyományos napló
+
+| Szempont | Auditnapló | Hagyományos napló |
+|----------|-----------|------------------|
+| **Cél** | Biztonság, megfelelőség, kritikus változások | Hibakeresés, teljesítménymonitorozás |
+| **Hatókör** | Felhasználói/rendszer műveletek, érzékeny adatok módosítása | Információs üzenetek, hibák, alkalmazásviselkedés |
+| **Megőrzés** | Hosszú ideig, jogi követelmények alapján | Korlátozott ideig, teljesítményi igények alapján |
+| **Struktúra** | Magasan strukturált, részletes metaadatokkal | Strukturálatlan vagy félig strukturált (JSON, szöveg) |
+
+### 13.3.4. Az auditnapló tartalma
+
+Az auditnaplónak a következő kérdésekre kell választ adnia: **Ki? Mit? Mikor? Hol?**
+
+Az alapvető entitások a következők:
+
+* **Level** - A napló szintje (pl. INFO, WARN, ERROR)
+* **CreatedAt** - A naplóbejegyzés időbélyege
+* **TraceId** - A munkafolyamat egyedi azonosítója
+* **Workflow Name** - A munkafolyamat neve
+* **User** - A felhasználó adatai (ID, Email)
+* **Resource** - Az erőforrás adatai (EntityName, EntityID)
+* **Operation** - A művelet adatai (Action, Changes - Previous, Current)
+* **Metadata** - Metaadatok (UserAgent, GeoLocation)
+
+### 13.3.5. Nyomkövetés (Tracing)
+
+#### TraceID
+
+A **TraceID** egy egyedi azonosító, amely egy kérés vagy tranzakció teljes életciklusát követi nyomon egy elosztott rendszerben. Lehetővé teszi a kapcsolódó naplók és események összekapcsolását.
+
+* **Formátum**: UUID
+* **Generálás**: A munkafolyamat belépési pontján
+* **Átvitel**: Fejlécekben (HTTP és AMQP) - `X-Trace-Id`
+* **Automatikus továbbítás**: Minden belső kéréssel
+* **Kereshetőség**: Teljes mértékben kereshető
+
+#### SpanID
+
+A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakciós egységet képvisel egy elosztott rendszeren belül.
+
+* Míg a TraceID a teljes kérésfolyamatot követi nyomon
+* A SpanID egy adott lépést vagy komponens-végrehajtást azonosít
+* Egyetlen nyomvonal több spant is tartalmazhat
+* Hierarchikusan vagy szekvenciálisan strukturálhatók
+
+### 13.3.6. Implementáció
+
+#### Technológiák
+
+* **Fluent Bit** - Naplófeldolgozó és -továbbító
+* **OpenSearch** - Elosztott, RESTful kereső- és analitikai motor
+* **Kibana** - Adatvizualizációs műszerfal az OpenSearch-höz
+
+#### OpenSearch kulcsfogalmai
+
+* **Cluster** - Több OpenSearch csomópontból álló rendszer
+* **Node** - Az OpenSearch egy példánya, amely a klaszter része
+* **Index** - Logikai egység, amely adatokat tárol (hasonlóan egy relációs adatbázis táblájához)
+* **Shard** - Egy index több részre osztása a skálázhatóság érdekében
+* **Document** - Egy indexen belül tárolt egyedi adatobjektum (hasonlóan egy relációs adatbázis sorához)
+
+## 13.4. Metrics
 A metrikák numerikus adatok, amelyeket a rendszer teljesítményéről, erőforrás-használatáról (CPU, memória) és viselkedéséről gyűjtünk idősoros formában. A metrikák segítenek a trendek elemzésében, a teljesítményproblémák azonosításában és a kapacitástervezésben.
 * **Prometheus:** A Prometheus egy nyílt forráskódú, idősoros adatbázis alapú monitoring és riasztási rendszer. Pull-alapú modellt használ, azaz periodikusan lekérdezi a metrikákat a monitorozott szolgáltatásoktól (endpointokról). Erőssége a nagy teljesítmény, a hatékony tárolás és a PromQL nevű, kifejező lekérdezőnyelv, amely komplex analízist és riasztási szabályok definiálását teszi lehetővé.
 * **Grafana:** A Grafana egy nyílt forráskódú analitikai és vizualizációs platform, amely lehetővé teszi különböző adatforrások (pl. Prometheus, Loki, Elasticsearch) adatainak lekérdezését, elemzését és gyönyörű, interaktív dashboardokon való megjelenítését. A metrikák és logok vizualizálásának központi eszköze.
 
-## 13.4. Alerts
+## 13.5. Alerts
 A riasztások proaktívan értesítik az üzemeltető csapatot, ha a rendszerben előre definiált küszöbértékeket meghaladó vagy abnormális események történnek. A cél a problémák gyors észlelése és a beavatkozás, még mielőtt a felhasználók észlelnék a hibát. A riasztásokat általában a Prometheus (Alertmanager) vagy a Grafana segítségével konfigurálják.
 
-## 13.5. Log Management Stacks
+## 13.6. Log Management Stacks
 * **EFK Stack:** Az EFK (Elasticsearch, Fluentd, Kibana) stack egy népszerű, nyílt forráskódú megoldás a logok központi gyűjtésére, feldolgozására és vizualizálására. A **Fluentd** összegyűjti a logokat különböző forrásokból, az **Elasticsearch** egy kereshető indexet épít belőlük, a **Kibana** pedig egy webes felületet biztosít a logok böngészéséhez, elemzéséhez és dashboardok készítéséhez.
 * **Loki:** A Grafana Labs által fejlesztett Loki egy horizontálisan skálázható, költséghatékony log aggregációs rendszer. A Prometheus által inspirált megközelítéssel csak a logok metaadatait (címkéit) indexeli, magát a log szövegét nem. Ezáltal rendkívül hatékony tárolást és gyors keresést tesz lehetővé, különösen a Grafana-val integrálva.
 
