@@ -1,4 +1,4 @@
-# Szoftverfejlesztés
+# Szoftver termékfejlesztés
 
 ## Absztrakt
 
@@ -21,8 +21,8 @@ A hallgatók megtanulják, hogy a szoftverfejlesztési folyamatok rugalmassága 
 * Szoftverfejlesztési életciklus
 * Agilis fejlesztés, Scrum, Kanban
 * Roadmap, Product backlog → Sprint backlog
-* DoR \- Definition of Ready
-* DoD \- Definition of Done
+* DoR - Definition of Ready
+* DoD - Definition of Done
 * User story, acceptance criteria
 * UX → UI → prototyping → usability tests
 * Szoftverarchitektúra → monolith, microservices, modularity
@@ -45,28 +45,28 @@ A dokumentum célja a termékfejlesztéssel kapcsolatos munkafolyamatok rögzít
 
 #### Globális fogalmak
 
-#### Projekt
+##### Projekt
 
 A projekt a legfőbb alapegység számunkra. Minden projekt több issuet és boardot foglal magába. Minden projekthez egyedi mezőket rendelhetünk a feladatokhoz. Minden szoftverhez külön projektet hozunk létre, valamint egy globális projektet a több szoftverterméken átívelő funkciókhoz és problémákhoz.
 
-#### Projektek
+##### Projektek
 
 * **Product Development**: Ebben a projektben zajlik a termék fejlesztése, és ebben a dokumentumban a erre a projektre vonatkozó definíciókat és folyamatleírásokat értjük.
 * **Management**: Ebben a projektben kezeljük a céginformációkat és a menedzsmenttől érkező folyamatokat információs céllal.
 
-#### User (Felhasználó)
+##### User (Felhasználó)
 
 Az alkalmazás felhasználója, azaz az a személy, aki az alkalmazást használja.
 
-#### Business (Üzleti oldal)
+##### Business (Üzleti oldal)
 
 A termék vízióját és elvárásait megfogalmazó személy(ek), akiknek feladata a koncepciók, követelmények, nagy vonalakban felvázolt tervek és mérföldkövek meghatározása a fejlesztők számára.
 
-#### Issue (Feladat)
+##### Issue (Feladat)
 
 Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik.
 
-##### Issue típusok
+**_Issue típusok_**
 
 * **Epic**: Egy adott téma/funkció köré szerveződő gyűjtőkártya, amely egy nagyobb egységet alkot.
   * Segít a nagyobb kép megértésében.
@@ -86,9 +86,10 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
   * A Spike során elengedhetetlen az alapos és rendszeres dokumentáció, amelynek célja a vizsgált tárgyra (pl. Feature kérés) vonatkozó minél több részlet felderítése.
 * **Bug**: Hibajelentések típusa.
 
-#### Feature implementáció állapotai
+###### Feature implementáció állapotai
 
-Az Issue állapotai az implementációs boardon:
+**_Implementation board állapotai_**:
+
 * **Open**: Nyitott jegy, még nem foglalkoztak vele.
 * **In Progress**: A megoldás folyamatban van.
 * **Parking**: Elkezdtünk rajta dolgozni, de félretettük, általában egy magasabb prioritású jegy miatt.
@@ -97,14 +98,14 @@ Az Issue állapotai az implementációs boardon:
 * **In Test**: Befejezett és telepített megoldás, amely tesztelésre vár.
 * **Closed**: A jegy megoldódott és lezárult.
 
-#### Feature előkészítés állapotai
+**_Feature előkészítés állapotai_**
 
 * **Not Relevant Yet**: Érintetlen jegy, amely a jelenlegi fejlesztési szakaszban még nem releváns.
 * **Wait for Grooming**: A jelenlegi fejlesztési szakaszban releváns, megbeszélésre váró jegy.
 * **Under Grooming**: Megbeszélés, tisztázás vagy kidolgozás alatt álló jegy.
 * **Groomed**: Tisztázott/kidolgozott jegy.
 
-#### Hibák állapotai
+**_Hibák állapotai_**
 
 * **Reported**: Jelentett jegy, amellyel még nem foglalkoztak.
 * **Incomprehensible**: Nem egyértelmű leírású jegy, amely tisztázást igényel.
@@ -113,29 +114,32 @@ Az Issue állapotai az implementációs boardon:
 * **Fixed**: A jegyet javították, de még nem ellenőrizték.
 * **Closed**: Javított, ellenőrzött és lezárt jegy.
 
-#### Roadmap
+##### Roadmap
 
 A Roadmap egy magas szintű, vizuális terv, amely bemutatja a termékfejlesztés hosszú távú irányát és a tervezett főbb funkciók, mérföldkövek kiadási ütemezését. Segít összehangolni az üzleti célokat a fejlesztési kapacitással, és kommunikációs eszköz a stakeholderek felé.
 
-#### Backlogok
+##### Backlogok
 
 Minden olyan Issue, amely nem szerepel a boardon, a Backlogba kerül. A board felületén van lehetőség a backlog megnyitására és a jegyek áthelyezésére a boardra. A backlog minden boardhoz egyedi lekérdezések alapján működik, és ez a lekérdezés az igényeknek megfelelően módosítható.
 
-#### Product Backlog
+##### Product Backlog
 
 A Product Backlog egy priorizált lista, amely tartalmaz minden, a termékkel kapcsolatos követelményt, funkciót, javítást és feladatot. A Product Owner felelős a karbantartásáért. Ez a lista dinamikus, folyamatosan változik az üzleti igények és a piaci visszajelzések alapján.
 
-#### Sprint Backlog
+##### Sprint Backlog
 
 A Sprint Backlog a Product Backlogból kiválasztott elemek halmaza, amelyeket a fejlesztőcsapat a következő sprint során fog megvalósítani. A Sprint Planning során a csapat közösen állítja össze, és a sprint ideje alatt már nem bővíthető, csak a meglévő feladatok elvégzésére fókuszálnak.
 
-#### Definition of Ready (DoR)
+##### Definition of Ready (DoR)
 
 A DoR egy ellenőrzőlista, amely meghatározza, hogy egy User Story-nak vagy feladatnak milyen kritériumoknak kell megfelelnie ahhoz, hogy a csapat be tudja venni a sprintbe. Biztosítja, hogy a feladatok jól definiáltak, érthetőek és megvalósíthatóak legyenek, minimalizálva a sprint közbeni kérdéseket.
 
-#### Definition of Done (DoD)
+##### Definition of Done (DoD)
 
 A Definition of Done (DoD) egy fogalom, amelyet az agilis szoftverfejlesztési módszertanokban, különösen a Scrumban használnak. Meghatározza azokat a kritériumokat, amelyeknek egy terméknövekménynek vagy felhasználói történetnek meg kell felelnie ahhoz, hogy teljesnek és kiadásra késznek tekintsék. A DoD segít biztosítani, hogy a fejlesztőcsapat, az érdekelt felek és az ügyfelek közösen értsék, mi minősül befejezett és magas minőségű munkának.
+
+**Példa a DoD-ra:**
+
 1. A kód működik a helyi környezetben
 A fejlesztő felelőssége, hogy a kód a saját gépén megfelelően működjön. Ez magában foglalja a szükséges infrastruktúra beállítását is.
 2. Az elfogadási kritériumok teljesültek
@@ -161,15 +165,11 @@ A tesztelő feladata, hogy elvégezze a szükséges manuális teszteket.
 12. A dokumentáció frissítve
 A fejlesztőnek a Document Maintenance útmutató alapján frissítenie kell a dokumentációt.
 
-#### User Story
-
-Egy rövid, egyszerű leírás egy funkcióról a felhasználó szemszögéből. A tipikus formátuma: "Mint egy \<felhasználó típus\>, szeretnék \<célt elérni\>, hogy \<értéket kapjak\>." A User Story segít a csapatnak a felhasználói igényekre fókuszálni.
-
-#### Acceptance Criteria
+##### Acceptance Criteria
 
 Azok a konkrét, tesztelhető feltételek, amelyeknek egy User Story-nak teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
 
-### Feature fejlesztési életciklus
+### SDLC (Szoftverfejlesztési életciklus)
 
 A szoftverfejlesztési életciklus (Software Development Life Cycle – SDLC) egy strukturált folyamat, amely a szoftver tervezésétől, fejlesztésétől és tesztelésétől a telepítésen át a karbantartásig terjed. A ciklus fő szakaszai a követelményanalízis, tervezés, implementáció, tesztelés, telepítés (deployment) és karbantartás. A modern, agilis megközelítések ezeket a szakaszokat rövid, iteratív ciklusokban ismétlik, lehetővé téve a rugalmas alkalmazkodást a változó igényekhez.
 
@@ -185,7 +185,6 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Developer**
 * **Test Automation Expert**
 * **DevOps Expert**
-
 
 #### Specifikáció
 
@@ -244,7 +243,7 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Leírás**: Ha a funkcióigény megfelel a Definition of Done-nak, a DevOps szakértő vagy a SCRUM csapat telepíti azt az éles környezetbe. A kiadás után a QA szakértő ellenőrzi a funkciót az éles környezetben is, és ha problémát talál, szól a fejlesztőknek.
 * **Felelős Személy**: SCRUM csapat, DevOps szakértő, QA szakértő, Terméktulajdonos
 
-#### kiadás után
+#### Utókövetés
 
 **Marketing**
 
@@ -255,39 +254,14 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Felelős Személy**: Elsődleges: Terméktulajdonos, Másodlagos: Üzlet és Terméktervező
 
 
-#### UX/UI tervezés
+# Fejlesztés
 
-Az UX (User Experience) és UI (User Interface) tervezés célja, hogy a szoftver ne csak funkcionális, hanem könnyen használható, hatékony és élvezetes is legyen. Az UX a teljes felhasználói élményre fókuszál, beleértve a logikai felépítést és a felhasználói utakat, míg az UI a vizuális megjelenéssel, azaz a gombok, ikonok és a grafikai elemek kinézetével és elrendezésével foglalkozik. A két terület szorosan együttműködik a felhasználóközpontú termék létrehozásában.
+## Alkalmazott technológiák (Technology Stack)
+### Nyelv és keretrendszer
+### Platform
 
-### Prototyping
-A prototípus-készítés során a tervezett funkciók vagy a teljes felület interaktív, de még nem végleges változatát hozzuk létre. A prototípusok lehetnek alacsony részletességű drótvázak (wireframe) vagy nagy részletességű, a végleges termékhez nagyon hasonló vizuális tervek. Céljuk a koncepciók gyors tesztelése, a felhasználói visszajelzések korai gyűjtése és a fejlesztési kockázatok csökkentése, mielőtt a tényleges kódolás megkezdődne.
-
-### Usability tests
-A használhatósági tesztek során valós felhasználókat kérünk meg, hogy végezzenek el előre meghatározott feladatokat a szoftverrel vagy annak prototípusával. A cél annak megfigyelése, hogy a felhasználók mennyire hatékonyan, eredményesen és elégedetten tudják használni a rendszert. A tesztek során feltárt problémák (pl. nehezen érthető funkciók, logikai buktatók) alapján finomítható a termék a jobb felhasználói élmény érdekében.
-
-#### A szoftverarchitektúra alapjai
-
-A szoftverarchitektúra rétegekre bontása, az adattranszfer objektumok (DTO-k) és a dependency injection (függőséginjektálás) használata mind azt a célt szolgálja, hogy az adatáramlás átlátható és követhető legyen.
-
-### Rétegek (layers)
-
-A szoftverarchitektúrában a rétegek szétválasztása egy bevett gyakorlat. Különböző modellek léteznek, mint például a klasszikus Model-View-Controller (MVC), vagy a részletesebb, Domain-Driven Design (DDD) által inspirált modellek, mint az Entities \-> Use Cases \-> Interface Adapters \-> Frameworks & Drivers. A rétegekre bontásnak számos előnye van: a modulok könnyen "mockolhatóak" (szimulálhatóak), ami a tesztelést segíti; a kódbázis szervezettebbé válik; a struktúra fix és követhető lesz; a közös kódbázis kialakítását pedig a fix elnevezési konvenciók segítik. Minden réteg egy "fekete doboz", ami elrejti a belső implementációt, és csak a publikus interfészt teszi láthatóvá. Ez a modularitás, a könnyebb tesztelhetőség és a jobb karbantarthatóság alapja. A "Facade" service-ek (homlokzati szolgáltatások) tiszta interfészt biztosítanak több szolgáltatási osztályhoz egyszerre, lehetővé téve a kisebb és fókuszáltabb szolgáltatási osztályok létrehozását, az üzleti logika olvashatóságát, és csökkentve a privát segédfüggvények számát.
-A döntések elhalasztása (Decision Postponement)
-A rétegzett architektúra támogatja a "decision postponement" elvét, azaz a döntések elhalasztását, amíg elegendő információ áll rendelkezésre a legjobb választáshoz. Ez rugalmasságot biztosít a jövőbeli változásokhoz, jobb döntéseket eredményez a teljesebb információk alapján, költséghatékonyabb, mert elkerüli a felesleges fejlesztési erőfeszítéseket, és skálázhatóbbá teszi az architektúrát, amely a valós igényekkel együtt fejlődhet. Például általános megoldásokat hozhatunk létre, amelyek különböző felhasználási esetekkel működnek, vagy olyan repository osztályokat, amelyek nincsenek adatelérési technológiához kötve.
-
-### Adattranszfer objektumok (DTOs)
-
-A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, adatvalidációra, valamint a rétegek és szervizosztályok közötti tiszta be- és kimenet biztosítására szolgálnak. Segítenek elkerülni a "code smell"-eket, mint például a túl sok (háromnál több) bemeneti argumentumot vagy a tuple visszatérési értékeket. Implementációjuk nyelvenként változó: PHP-ban osztályok, TypeScriptben interfészek, Pythonban (Pydantic) osztályok, C-ben, Go-ban és Rustban pedig structok formájában valósulnak meg. A DTO-k átjáróként funkcionálnak a rétegek között, csak a szükséges adatokat továbbítják, csökkentve a "zajt" és segítve a fókuszt. Ahogy Robert C. Martin (Uncle Bob) mondja: "Keep the DTOs simple\!" (Tartsd a DTO-kat egyszerűnek\!).
-
-### Függőségkezelés (Dependency Injection - DI)
-
-A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
-
-### Félelmek és frusztrációk
-
-Természetesen ezeknek a mintáknak vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk." Egy másik híres mondás szerint pedig: "A memória olcsóbb, mint a programozó órabére." A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
-
-### Monolith
+### Termék architektúra
+#### Monolith
 
 A monolit architektúra egyetlen telepítési egységként definiálható, ahol a rendszer minden funkcióját együtt kell telepíteni. Főbb típusai:
 * **Egyprocesszes monolit:** A legelterjedtebb forma, ahol minden kód egyetlen processzben fut.
@@ -295,7 +269,7 @@ A monolit architektúra egyetlen telepítési egységként definiálható, ahol 
 * **Elosztott monolit:** Bár több szolgáltatásból áll, a rendszert mégis együtt kell telepíteni a szoros csatolások miatt. Ez a legrosszabb mindkét világból: az elosztott rendszerek komplexitását ötvözi a monolitok rugalmatlanságával.
 A monolitok előnye az egyszerűbb telepítés, fejlesztői folyamatok és tesztelés. Kisebb csapatoknál vagy a fejlesztés korai szakaszában gyakran ez a legésszerűbb alapértelmezett választás.
 
-### Microservices
+#### Microservices
 
 A mikroszolgáltatási architektúra a rendszert függetlenül telepíthető, kis, üzleti képességek köré szervezett szolgáltatások gyűjteményeként építi fel. A cél a rugalmasság, skálázhatóság és a gyorsabb, független fejlesztési ciklusok lehetővé tétele.
 * **Elvek:**
@@ -309,25 +283,40 @@ A mikroszolgáltatási architektúra a rendszert függetlenül telepíthető, ki
 
 A mikroszolgáltatások nem minden esetben jelentenek ideális megoldást. Leginkább nagy, gyorsan növekvő rendszereknél, SaaS alkalmazásoknál és olyan szervezeteknél előnyösek, ahol több csapat dolgozik párhuzamosan.
 
-### Modularitás
+### Program architektúrák
+
+A szoftverarchitektúra rétegekre bontása, az adattranszfer objektumok (DTO-k) és a dependency injection (függőséginjektálás) használata mind azt a célt szolgálja, hogy az adatáramlás átlátható és követhető legyen.
 
 A modularitás egy szoftverarchitekturális elv, amely a rendszert független, cserélhető és önálló egységekre (modulokra) bontja. Minden modul egy specifikus feladatot lát el, és jól definiált interfészen keresztül kommunikál a többi modullal. A modularitás növeli a kód újrafelhasználhatóságát, megkönnyíti a karbantartást és a párhuzamos fejlesztést, mivel egy-egy modul anélkül módosítható vagy cserélhető, hogy az a teljes rendszert érintené.
 
-#### CI/CD és automatizáció
+#### Rétegek (layers)
 
-A CI/CD (Continuous Integration/Continuous Deployment) egy olyan gyakorlat, amely automatizálja a szoftverfejlesztés és \-kiadás folyamatait. A cél a kódváltozások gyors, megbízható és automatizált integrálása, tesztelése és telepítése.
+A szoftverarchitektúrában a rétegek szétválasztása egy bevett gyakorlat. Különböző modellek léteznek, mint például a klasszikus Model-View-Controller (MVC), vagy a részletesebb, Domain-Driven Design (DDD) által inspirált modellek, mint az Entities \-> Use Cases \-> Interface Adapters \-> Frameworks & Drivers. A rétegekre bontásnak számos előnye van: a modulok könnyen "mockolhatóak" (szimulálhatóak), ami a tesztelést segíti; a kódbázis szervezettebbé válik; a struktúra fix és követhető lesz; a közös kódbázis kialakítását pedig a fix elnevezési konvenciók segítik. Minden réteg egy "fekete doboz", ami elrejti a belső implementációt, és csak a publikus interfészt teszi láthatóvá. Ez a modularitás, a könnyebb tesztelhetőség és a jobb karbantarthatóság alapja. A "Facade" service-ek (homlokzati szolgáltatások) tiszta interfészt biztosítanak több szolgáltatási osztályhoz egyszerre, lehetővé téve a kisebb és fókuszáltabb szolgáltatási osztályok létrehozását, az üzleti logika olvashatóságát, és csökkentve a privát segédfüggvények számát.
+A döntések elhalasztása (Decision Postponement)
+A rétegzett architektúra támogatja a "decision postponement" elvét, azaz a döntések elhalasztását, amíg elegendő információ áll rendelkezésre a legjobb választáshoz. Ez rugalmasságot biztosít a jövőbeli változásokhoz, jobb döntéseket eredményez a teljesebb információk alapján, költséghatékonyabb, mert elkerüli a felesleges fejlesztési erőfeszítéseket, és skálázhatóbbá teszi az architektúrát, amely a valós igényekkel együtt fejlődhet. Például általános megoldásokat hozhatunk létre, amelyek különböző felhasználási esetekkel működnek, vagy olyan repository osztályokat, amelyek nincsenek adatelérési technológiához kötve.
 
-### Jenkins
+#### Adattranszfer objektumok (DTOs)
 
-A Jenkins egy nyílt forráskódú, széles körben elterjedt automatizálási szerver, amely a CI/CD folyamatok motorja lehet. Plugin-ek ezreivel bővíthető, így rendkívül rugalmasan képes támogatni a buildelési, tesztelési és telepítési folyamatok szinte bármilyen kombinációját. Konfigurálása általában egy Jenkinsfile\-ban, kódszerűen történik.
+A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, adatvalidációra, valamint a rétegek és szervizosztályok közötti tiszta be- és kimenet biztosítására szolgálnak. Segítenek elkerülni a "code smell"-eket, mint például a túl sok (háromnál több) bemeneti argumentumot vagy a tuple visszatérési értékeket. Implementációjuk nyelvenként változó: PHP-ban osztályok, TypeScriptben interfészek, Pythonban (Pydantic) osztályok, C-ben, Go-ban és Rustban pedig structok formájában valósulnak meg. A DTO-k átjáróként funkcionálnak a rétegek között, csak a szükséges adatokat továbbítják, csökkentve a "zajt" és segítve a fókuszt. Ahogy Robert C. Martin (Uncle Bob) mondja: "Keep the DTOs simple\!" (Tartsd a DTO-kat egyszerűnek\!).
 
-### Gitlab CI/CD
+#### Függőségkezelés (Dependency Injection - DI)
 
-A GitLab beépített, szorosan integrált CI/CD megoldása, amely lehetővé teszi a teljes szoftverfejlesztési életciklus kezelését egyetlen platformon. A pipeline-okat YAML formátumú .gitlab-ci.yml fájlban definiálják, ami a repository része. Ez megkönnyíti a verziókövetést és a pipeline-ok kezelését a kóddal együtt.
+A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
 
-A Build, Test, Deploy pipeline a CI/CD folyamat gerince. Ez egy automatizált lépéssorozat, amely a kódváltozások repository-ba való feltöltésével indul. A **Build** lépés lefordítja a kódot és összeállítja a futtatható alkalmazást. A **Test** fázisban automatizált tesztek (unit, integration stb.) futnak le a minőségellenőrzés érdekében. Végül a sikeres tesztek után a **Deploy** lépés automatikusan telepíti az alkalmazást a célkörnyezetbe (pl. teszt, éles).
 
-#### Verziókezelés
+## UX/UI tervezés
+
+Az UX (User Experience) és UI (User Interface) tervezés célja, hogy a szoftver ne csak funkcionális, hanem könnyen használható, hatékony és élvezetes is legyen. Az UX a teljes felhasználói élményre fókuszál, beleértve a logikai felépítést és a felhasználói utakat, míg az UI a vizuális megjelenéssel, azaz a gombok, ikonok és a grafikai elemek kinézetével és elrendezésével foglalkozik. A két terület szorosan együttműködik a felhasználóközpontú termék létrehozásában.
+
+### Prototipizálás
+A prototípus-készítés során a tervezett funkciók vagy a teljes felület interaktív, de még nem végleges változatát hozzuk létre. A prototípusok lehetnek alacsony részletességű drótvázak (wireframe) vagy nagy részletességű, a végleges termékhez nagyon hasonló vizuális tervek. Céljuk a koncepciók gyors tesztelése, a felhasználói visszajelzések korai gyűjtése és a fejlesztési kockázatok csökkentése, mielőtt a tényleges kódolás megkezdődne.
+
+### Használhatósági tesztek
+A használhatósági tesztek során valós felhasználókat kérünk meg, hogy végezzenek el előre meghatározott feladatokat a szoftverrel vagy annak prototípusával. A cél annak megfigyelése, hogy a felhasználók mennyire hatékonyan, eredményesen és elégedetten tudják használni a rendszert. A tesztek során feltárt problémák (pl. nehezen érthető funkciók, logikai buktatók) alapján finomítható a termék a jobb felhasználói élmény érdekében.
+
+
+
+## Verziókezelés
 
 ### Git workflow útmutató
 
@@ -427,7 +416,7 @@ Amíg egy release branch-csel dolgozunk, "hotfix"-eket lehet alkalmazni rajta, d
 * Sikeres kiadás után a master\-t rebase-elnünk kell a release branch-re, majd végül törölnünk kell azt.
 * A master branch-et is szinkronizálni akarjuk a develop branch-csel, de ebben az esetben merge\-et kell használnunk rebase helyett, hogy elkerüljük a felesleges commitok alkalmazását és a develop branch sérülését (így a develop\-ból létrehozott folyamatban lévő brancheknek csak egy merge commitot kell rebase-elniük).
 
-#### Tesztelés a szoftverfejlesztésben
+## Tesztelés
 
 A tesztelés a szoftverfejlesztés kritikus része, amely biztosítja a kód minőségét, megbízhatóságát és a követelményeknek való megfelelést. A különböző tesztelési szintek együttesen alkotják a tesztpiramist.
 
@@ -440,27 +429,35 @@ Az integrációs tesztek több komponenst vagy modult kapcsolnak össze, és azo
 ### End-to-end (E2E) test
 Az E2E tesztek a teljes alkalmazást a felhasználó szemszögéből szimulálják. Egy teljes felhasználói útvonalat (pl. bejelentkezés, termék kosárba helyezése, fizetés) automatizálnak egy valósághű környezetben. Bár ezek a leglassabb és legbonyolultabb tesztek, a legnagyobb magabiztosságot adják a rendszer üzleti folyamatainak helyes működéséről.
 
-#### Fejlesztési gyakorlatok és minőségbiztosítás
+## Üzemeltetés
 
-A fejlesztési gyakorlatok és a minőségbiztosítás (Quality Assurance \- QA) olyan folyamatok és eszközök összessége, amelyek célja a szoftver minőségének folyamatos javítása és a hibák megelőzése. Ide tartoznak a kódolási szabványok, az automatizált tesztelés, a kódellenőrzés (code review) és a páros programozás, amelyek együttesen biztosítják, hogy a fejlesztés során a csapat magas minőségű, megbízható és karbantartható kódot állítson elő.
+### Hosting
 
-### Code review
-A kódellenőrzés során egy vagy több fejlesztő átnézi egy kollégájuk által írt kódot, mielőtt az beolvasztásra kerülne a közös kódbázisba. A cél a hibák, logikai problémák, a kódolási szabványoktól való eltérések és a potenciális teljesítményproblémák kiszűrése. Ez a gyakorlat nemcsak a kód minőségét javítja, hanem a tudásmegosztást és a csapatszintű felelősségvállalást is elősegíti.
+### Pipeline
 
-### Pair programming
-A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt egy munkaállomáson. Az egyikük, a "driver", írja a kódot, míg a másik, a "navigator", folyamatosan figyeli, ellenőrzi a munkát, és stratégiai iránymutatást ad. A szerepeket gyakran cserélik. Ez a módszer javítja a kód minőségét, csökkenti a hibák számát, és felgyorsítja a tudásmegosztást a csapaton belül.
+A CI/CD (Continuous Integration/Continuous Deployment) egy olyan gyakorlat, amely automatizálja a szoftverfejlesztés és \-kiadás folyamatait. A cél a kódváltozások gyors, megbízható és automatizált integrálása, tesztelése és telepítése.
 
-#### Release menedzsment
+#### Jenkins
+
+A Jenkins egy nyílt forráskódú, széles körben elterjedt automatizálási szerver, amely a CI/CD folyamatok motorja lehet. Plugin-ek ezreivel bővíthető, így rendkívül rugalmasan képes támogatni a buildelési, tesztelési és telepítési folyamatok szinte bármilyen kombinációját. Konfigurálása általában egy Jenkinsfile\-ban, kódszerűen történik.
+
+#### Gitlab CI/CD
+
+A GitLab beépített, szorosan integrált CI/CD megoldása, amely lehetővé teszi a teljes szoftverfejlesztési életciklus kezelését egyetlen platformon. A pipeline-okat YAML formátumú .gitlab-ci.yml fájlban definiálják, ami a repository része. Ez megkönnyíti a verziókövetést és a pipeline-ok kezelését a kóddal együtt.
+
+A Build, Test, Deploy pipeline a CI/CD folyamat gerince. Ez egy automatizált lépéssorozat, amely a kódváltozások repository-ba való feltöltésével indul. A **Build** lépés lefordítja a kódot és összeállítja a futtatható alkalmazást. A **Test** fázisban automatizált tesztek (unit, integration stb.) futnak le a minőségellenőrzés érdekében. Végül a sikeres tesztek után a **Deploy** lépés automatikusan telepíti az alkalmazást a célkörnyezetbe (pl. teszt, éles).
+
+### Release menedzsment
 
 A release menedzsment a szoftverkiadások tervezésének, ütemezésének, koordinálásának és telepítésének folyamata. Célja, hogy az új verziók zökkenőmentesen, minimális kockázattal és a felhasználók lehető legkisebb zavarásával kerüljenek éles környezetbe. Magában foglalja a verziókövetést, a kiadási stratégiák (pl. Canary, Blue-Green) alkalmazását és a kiadások utáni monitorozást.
 
-### Canary release
+#### Canary release
 A kanári kiadás egy olyan telepítési stratégia, ahol az új szoftververziót először csak a felhasználók egy kis szegmensének teszik elérhetővé (ők a "kanárik"). A rendszer viselkedését és a felhasználói visszajelzéseket figyelve, ha minden rendben van, a kiadást fokozatosan terjesztik ki a teljes felhasználói bázisra. Ez a módszer csökkenti a hibás kiadásokkal járó kockázatot, mivel egy esetleges probléma csak a felhasználók kis részét érinti.
 
-### Blue-green deployment
+#### Blue-green deployment
 A Blue-Green telepítés során két azonos, párhuzamosan futó éles környezetet tartanak fenn: a "Blue" a jelenlegi, stabil verziót futtatja, míg a "Green" a szoftver új verzióját. A telepítés során a bejövő forgalmat egy router segítségével egyszerűen átirányítják a Blue környezetről a Green-re. Ha az új verzióval probléma merül fel, a forgalom azonnal és zökkenőmentesen visszaállítható a Blue környezetre, minimalizálva a leállási időt és a kockázatot.
-### Feature flag
 
+#### Feature flag
 A feature flag (funkciózászló) egy szoftver fejlesztési technika, amely lehetővé teszi, hogy bizonyos funkciókat feltételesen aktiváljunk vagy deaktiváljunk anélkül, hogy új verziót kellene telepíteni. Ez lehetővé teszi a funkciók fokozatos bevezetését, A/B tesztelést és egyszerű rollback-et.
 
 **Előnyei:**
@@ -475,20 +472,16 @@ A feature flag (funkciózászló) egy szoftver fejlesztési technika, amely lehe
 * **Experiment flags** - A/B tesztek és felhasználó tesztek
 * **Ops flags** - Operatív döntések (terhelés csökkentés, cache kikapcsolás)
 * **Permission flags** - Hozzáférés kontrolálása felhasználócsoportoknak
-
-
-#### Üzemeltetés és monitoring
+### Monitoring
 
 Az üzemeltetés és monitoring célja a szoftver stabil és megbízható működésének biztosítása az éles környezetben. Magában foglalja a rendszer állapotának folyamatos figyelését, a hibák proaktív észlelését és elhárítását, valamint a teljesítmény optimalizálását.
 
-### Observability
+#### Megfigyelhetőség
 A megfigyelhetőség (observability) egy rendszer azon képessége, hogy a külső kimenetei (logok, metrikák, trace-ek) alapján megérthető legyen a belső állapota. Nem csupán a "mi romlott el?" kérdésre ad választ, hanem a "miért?"-re is, segítve a komplex, elosztott rendszerek hibakeresését.
 
-### Naplófájlok
+#### Naplófájlok
 
 Az általános naplófájlok a szoftver működésének nyomon követésére és hibakeresésre szolgálnak. Ezek rögzítik az alkalmazás eseményeit, hibáit, figyelmeztetéseit és egyéb diagnosztikai információkat.
-
-#### Célja
 
 A naplófájlok elsődleges céljai:
 
@@ -497,8 +490,6 @@ A naplófájlok elsődleges céljai:
 * **Üzemeltetési információ** - Alkalmazás működésének követése
 * **Fejlesztői támogatás** - Kód viselkedésének megértése
 * **Rendszer-terhelés elemzése** - Erőforrás-használat nyomon követése
-
-#### Érzékeny adatok szűrése
 
 A naplófájlokban soha ne szerepeljenek érzékeny információk:
 
@@ -510,8 +501,6 @@ A naplófájlokban soha ne szerepeljenek érzékeny információk:
 
 **Ajánlás:** Maszkírozz érzékeny adatokat a naplóban (pl. `***` vagy `[REDACTED]`)
 
-#### Rotáció
-
 A naplófájlok kezelésének legjobb gyakorlatai:
 
 * **Méret alapú rotáció** - Fájl eléri az X MB-ot → új fájl
@@ -520,7 +509,10 @@ A naplófájlok kezelésének legjobb gyakorlatai:
 * **Archiválás** - Hosszú távú tárolás külön helyre
 * **Törlési politika** - X hónap után végleges törlés
 
-#### Efk stack
+#### Megvalósítás
+
+* **EFK Stack:** Az EFK (Elasticsearch, Fluentd, Kibana) stack egy népszerű, nyílt forráskódú megoldás a logok központi gyűjtésére, feldolgozására és vizualizálására. A **Fluentd** összegyűjti a logokat különböző forrásokból, az **Elasticsearch** egy kereshető indexet épít belőlük, a **Kibana** pedig egy webes felületet biztosít a logok böngészéséhez, elemzéséhez és dashboardok készítéséhez.
+* **Loki:** A Grafana Labs által fejlesztett Loki egy horizontálisan skálázható, költséghatékony log aggregációs rendszer. A Prometheus által inspirált megközelítéssel csak a logok metaadatait (címkéit) indexeli, magát a log szövegét nem. Ezáltal rendkívül hatékony tárolást és gyors keresést tesz lehetővé, különösen a Grafana-val integrálva.
 
 Az **EFK Stack** (Elasticsearch, Fluent, Kibana) egy népszerű megoldás a logok központi gyűjtésére:
 
@@ -539,11 +531,11 @@ Az **EFK Stack** (Elasticsearch, Fluent, Kibana) egy népszerű megoldás a logo
   * Logok böngészése és keresése
   * Valós idejű monitorozás
 
-### Audit trail
+#### Audit trail
 
 Az audit trail (auditnapló) egy olyan naplózási mechanizmus, amely időrendi sorrendben rögzíti a rendszerben bekövetkező eseményeket és változásokat (munkafolyamatokba rendezve). Célja a felhasználói és rendszertevékenységek nyomon követhető és ellenőrizhető módon történő dokumentálása.
 
-#### Célok és előnyök
+##### Célok és előnyök
 
 A fő célok a következők:
 * **Nyomon követhetőség** - Felhasználói és rendszertevékenységek rögzítése
@@ -556,7 +548,7 @@ Az előnyök közé tartozik:
 * Megelőzhető csalás és jogosulatlan módosítások
 * Váratlan viselkedés azonosítása
 
-#### Jogi követelmények
+##### Jogi követelmények
 
 Több szabvány és irányelv is előírja az auditnaplózást:
 
@@ -564,7 +556,7 @@ Több szabvány és irányelv is előírja az auditnaplózást:
 * **PCI DSS (Payment Card Industry Data Security Standard)** - Részletes felhasználói műveletnaplózás, naplófájlok titkosítása, manipuláció elleni védelem, legalább egyéves megőrzés (három hónapnak hozzáférhetőnek kell lennie).
 * **NIS 2 (Hálózati és Információbiztonsági Irányelv 2)** - Biztonsági események naplózása és monitorozása (hatályos: 2024. október 18-tól). Segíti a biztonsági incidensek gyors azonosítását és jogosulatlan hozzáférések megelőzését.
 
-#### Auditnapló vs. hagyományos napló
+##### Auditnapló vs. hagyományos napló
 
 | Szempont | Auditnapló | Hagyományos napló |
 |----------|-----------|------------------|
@@ -573,7 +565,7 @@ Több szabvány és irányelv is előírja az auditnaplózást:
 | **Megőrzés** | Hosszú ideig, jogi követelmények alapján | Korlátozott ideig, teljesítményi igények alapján |
 | **Struktúra** | Magasan strukturált, részletes metaadatokkal | Strukturálatlan vagy félig strukturált (JSON, szöveg) |
 
-#### Az auditnapló tartalma
+##### Az auditnapló tartalma
 
 Az auditnaplónak a következő kérdésekre kell választ adnia: **Ki? Mit? Mikor? Hol?**
 
@@ -588,9 +580,9 @@ Az alapvető entitások a következők:
 * **Operation** - A művelet adatai (Action, Changes - Previous, Current)
 * **Metadata** - Metaadatok (UserAgent, GeoLocation)
 
-#### Nyomkövetés (tracing)
+##### Nyomkövetés (tracing)
 
-**_12.3.5.1. Traceid_**
+**_TraceId_**
 
 A **TraceID** egy egyedi azonosító, amely egy kérés vagy tranzakció teljes életciklusát követi nyomon egy elosztott rendszerben. Lehetővé teszi a kapcsolódó naplók és események összekapcsolását.
 
@@ -600,7 +592,7 @@ A **TraceID** egy egyedi azonosító, amely egy kérés vagy tranzakció teljes 
 * **Automatikus továbbítás**: Minden belső kéréssel
 * **Kereshetőség**: Teljes mértékben kereshető
 
-**_12.3.5.2. Spanid_**
+**_SpanID_**
 
 A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakciós egységet képvisel egy elosztott rendszeren belül.
 
@@ -609,15 +601,15 @@ A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakció
 * Egyetlen nyomvonal több spant is tartalmazhat
 * Hierarchikusan vagy szekvenciálisan strukturálhatók
 
-#### Implementáció
+##### Implementáció
 
-**_12.3.6.1. Technológiák_**
+**_Technológiák_**
 
 * **Fluent Bit** - Naplófeldolgozó és -továbbító
 * **OpenSearch** - Elosztott, RESTful kereső- és analitikai motor
 * **Kibana** - Adatvizualizációs műszerfal az OpenSearch-höz
 
-**_12.3.6.2. Opensearch kulcsfogalmai_**
+**_Opensearch kulcsfogalmai_**
 
 * **Cluster** - Több OpenSearch csomópontból álló rendszer
 * **Node** - Az OpenSearch egy példánya, amely a klaszter része
@@ -625,20 +617,30 @@ A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakció
 * **Shard** - Egy index több részre osztása a skálázhatóság érdekében
 * **Document** - Egy indexen belül tárolt egyedi adatobjektum (hasonlóan egy relációs adatbázis sorához)
 
-### Metrikák
+#### Metrikák
 A metrikák numerikus adatok, amelyeket a rendszer teljesítményéről, erőforrás-használatáról (CPU, memória) és viselkedéséről gyűjtünk idősoros formában. A metrikák segítenek a trendek elemzésében, a teljesítményproblémák azonosításában és a kapacitástervezésben.
 * **Prometheus:** A Prometheus egy nyílt forráskódú, idősoros adatbázis alapú monitoring és riasztási rendszer. Pull-alapú modellt használ, azaz periodikusan lekérdezi a metrikákat a monitorozott szolgáltatásoktól (endpointokról). Erőssége a nagy teljesítmény, a hatékony tárolás és a PromQL nevű, kifejező lekérdezőnyelv, amely komplex analízist és riasztási szabályok definiálását teszi lehetővé.
 * **Grafana:** A Grafana egy nyílt forráskódú analitikai és vizualizációs platform, amely lehetővé teszi különböző adatforrások (pl. Prometheus, Loki, Elasticsearch) adatainak lekérdezését, elemzését és gyönyörű, interaktív dashboardokon való megjelenítését. A metrikák és logok vizualizálásának központi eszköze.
 
-### Riasztások
+#### Riasztások
 A riasztások proaktívan értesítik az üzemeltető csapatot, ha a rendszerben előre definiált küszöbértékeket meghaladó vagy abnormális események történnek. A cél a problémák gyors észlelése és a beavatkozás, még mielőtt a felhasználók észlelnék a hibát. A riasztásokat általában a Prometheus (Alertmanager) vagy a Grafana segítségével konfigurálják.
 
-### Log management stacks
-* **EFK Stack:** Az EFK (Elasticsearch, Fluentd, Kibana) stack egy népszerű, nyílt forráskódú megoldás a logok központi gyűjtésére, feldolgozására és vizualizálására. A **Fluentd** összegyűjti a logokat különböző forrásokból, az **Elasticsearch** egy kereshető indexet épít belőlük, a **Kibana** pedig egy webes felületet biztosít a logok böngészéséhez, elemzéséhez és dashboardok készítéséhez.
-* **Loki:** A Grafana Labs által fejlesztett Loki egy horizontálisan skálázható, költséghatékony log aggregációs rendszer. A Prometheus által inspirált megközelítéssel csak a logok metaadatait (címkéit) indexeli, magát a log szövegét nem. Ezáltal rendkívül hatékony tárolást és gyors keresést tesz lehetővé, különösen a Grafana-val integrálva.
+## Minőségbiztosítás
 
-#### Technikai adósság és refaktorálás
+A fejlesztési gyakorlatok és a minőségbiztosítás (Quality Assurance \- QA) olyan folyamatok és eszközök összessége, amelyek célja a szoftver minőségének folyamatos javítása és a hibák megelőzése. Ide tartoznak a kódolási szabványok, az automatizált tesztelés, a kódellenőrzés (code review) és a páros programozás, amelyek együttesen biztosítják, hogy a fejlesztés során a csapat magas minőségű, megbízható és karbantartható kódot állítson elő.
+
+### Technikai adósság és refaktorálás
 
 A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát. A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
 
+### Code review
+A kódellenőrzés során egy vagy több fejlesztő átnézi egy kollégájuk által írt kódot, mielőtt az beolvasztásra kerülne a közös kódbázisba. A cél a hibák, logikai problémák, a kódolási szabványoktól való eltérések és a potenciális teljesítményproblémák kiszűrése. Ez a gyakorlat nemcsak a kód minőségét javítja, hanem a tudásmegosztást és a csapatszintű felelősségvállalást is elősegíti.
 
+### Pair programming
+A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt egy munkaállomáson. Az egyikük, a "driver", írja a kódot, míg a másik, a "navigator", folyamatosan figyeli, ellenőrzi a munkát, és stratégiai iránymutatást ad. A szerepeket gyakran cserélik. Ez a módszer javítja a kód minőségét, csökkenti a hibák számát, és felgyorsítja a tudásmegosztást a csapaton belül.
+
+### Félelem a túltervezéstől
+
+Természetesen ezeknek a mintáknak vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk." Egy másik híres mondás szerint pedig: "A memória olcsóbb, mint a programozó órabére." A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
+
+## Dokumentáció
