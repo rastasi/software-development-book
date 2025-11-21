@@ -39,32 +39,84 @@ A hallgatók megtanulják, hogy a szoftverfejlesztési folyamatok rugalmassága 
 
 ## Projektmenedzsment
 
-### Agile
 
-A dokumentum célja a termékfejlesztéssel kapcsolatos munkafolyamatok rögzítése, az eljárások lépésről-lépésre történő leírása. Jelenleg a projektmenedzsmentet támogató eszköz a YouTrack. A kialakított entitások a YouTrack adottságait használják ki, de az elvek és a munkafolyamatok általánosak és szoftverfüggetlenek.
+Az Agile a szoftverfejlesztésben egy rugalmas megközelítés, amely gyors iterációkra, folyamatos visszajelzésre és együttműködésre épül. Számos keretrendszere létezik, például a Scrum, ahol sprintekben dolgoznak, illetve a Kanban, amely folyamatos áramlásra és munkakorlátozásra épít. A cél, hogy a csapat gyorsan és hatékonyan tudjon reagálni a változó igényekre.
 
-#### Globális fogalmak
+### Project management eszközök
 
-##### Projekt
+A PM eszközök (project management tool-ok) a projektek tervezését, feladatkezelést, kommunikációt és riportolást segítik. Támogatják az Agile, Scrum, Kanban vagy akár vízesés típusú munkafolyamatokat, és hatékonyabbá teszik a csapatmunkát.
 
-A projekt a legfőbb alapegység számunkra. Minden projekt több issuet és boardot foglal magába. Minden projekthez egyedi mezőket rendelhetünk a feladatokhoz. Minden szoftverhez külön projektet hozunk létre, valamint egy globális projektet a több szoftverterméken átívelő funkciókhoz és problémákhoz.
+**_Trello_**
 
-##### Projektek
+– Fizetős? Ingyenes alapfunkciókkal, bővített csomagok havi díjért.
+– Projekttípus: Kis csapatok, marketing, könnyű Kanban alapú feladatkezelés.
+– Jellemző: Kártya-alapú, egyszerű, vizuális.
 
-* **Product Development**: Ebben a projektben zajlik a termék fejlesztése, és ebben a dokumentumban a erre a projektre vonatkozó definíciókat és folyamatleírásokat értjük.
-* **Management**: Ebben a projektben kezeljük a céginformációkat és a menedzsmenttől érkező folyamatokat információs céllal.
+***_Jira_**
 
-##### User (Felhasználó)
+– Fizetős? Ingyenes kis csapatnak (max 10), nagyobb csapatoknak havi díjas.
+– Projekttípus: Fejlesztőcsapatok, komplex Agile projektek, enterprise környezet.
+– Jellemző: Sprintkezelés, backlog, fejlett riportok.
+
+**_Redmine_**
+– Fizetős? Ingyenes, nyílt forráskódú; saját szerveren fut.
+– Projekttípus: Olyan csapatoknak, akik testre szabható, önhostolt megoldást akarnak.
+– Jellemző: Issue-kezelés, wiki, moduláris bővíthetőség. A mai szemnek ódivatú, de funkcióját jól ellátó felülete van.
+
+**_YouTrack_**
+– Fizetős? Ingyenes kis csapatoknak, nagyobbaknak előfizetéses.
+– Projekttípus: Fejlesztőcsapatok, akik gyors keresésre és hatékony issue-kezelésre vágynak.
+– Jellemző: Keresőalapú workflow, Agile boardok.
+
+**_ClickUp_**
+– Fizetős? Ingyenes alapcsomag, fejlettebb funkciókért havi díj.
+– Projekttípus: Minden típusú projekt, cégeknek akik „mindent egyben” rendszert akarnak.
+– Jellemző: Dokumentumok, dashboardok, automatizációk.
+
+**_Asana_**
+– Fizetős? Ingyenes alapcsomag, profi funkciók előfizetéssel.
+– Projekttípus: Általános csapatmunka, marketing, operations, kisebb IT-projektek.
+– Jellemző: Könnyen tanulható, vizuális tervezés, idővonal, hierarchizálható feladatok.
+
+### Kommunikációs csatornák
+
+**_Google Workspace_**  
+– Fizetős? Havidíjas csomagok, vállalati szintű szolgáltatásokkal.  
+– Mire való: Olyan cégeknek, ahol fontos a könnyű dokumentummegosztás, valós idejű együttműködés és integrált felhőalapú működés.  
+– Jellemző: Gmail, Google Drive, Meet, Chat – minden jól integrálva egy rendszerben.
+
+**_Microsoft 365 (korábban Office 365)_**  
+– Fizetős? Előfizetéses rendszer többféle vállalati csomaggal.  
+– Mire való: Közép- és nagyvállalatoknak, ahol fontos a fejlett adminisztráció, biztonság és a klasszikus Office alkalmazások integrációja.  
+– Jellemző: Outlook, Teams, SharePoint, OneDrive – erős vállalati ökoszisztéma, strukturált kommunikációval.
+
+**_Slack_**  
+– Fizetős? Ingyenes alapverzió korlátozásokkal; teljes funkcionalitás előfizetéssel.  
+– Mire való: Főleg technológiai csapatoknak, ahol sok integrációra, botra és gyors csatornaalapú kommunikációra van szükség.  
+– Jellemző: Csatornák, fejlett keresés, rengeteg integráció, jól skálázódik nagy csapatokra.
+
+**_Discord_**  
+– Fizetős? Alapvetően ingyenes, opcionális fizetős funkciókkal (Nitro).  
+– Mire való: Rugalmasabb, közvetlenebb kommunikációra, kisebb vagy informálisabb csapatoknak, illetve ahol gyakori a hangalapú együttműködés.  
+– Jellemző: Hangcsatornák, egyszerű szobakezelés, gyors chat – kevésbé formális, de nagyon rugalmas eszköz.
+
+### Globális fogalmak
+
+#### Projekt
+
+A projekt egy időben behatárolt, egyedi cél elérésére irányuló, erőforrásokkal és költségkerettel rendelkező tevékenységcsoport. Van kezdete, vége, konkrét eredménye, és egy adott problémára vagy igényre ad megoldást.
+
+#### User (Felhasználó)
 
 Az alkalmazás felhasználója, azaz az a személy, aki az alkalmazást használja.
 
-##### Business (Üzleti oldal)
+#### Business (Üzleti oldal)
 
 A termék vízióját és elvárásait megfogalmazó személy(ek), akiknek feladata a koncepciók, követelmények, nagy vonalakban felvázolt tervek és mérföldkövek meghatározása a fejlesztők számára.
 
-##### Issue (Feladat)
+#### Issue (Feladat)
 
-Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik.
+Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Nevezik még Ticket-nek, Task-nak is, valamint ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik. 
 
 **_Issue típusok_**
 
@@ -86,9 +138,22 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
   * A Spike során elengedhetetlen az alapos és rendszeres dokumentáció, amelynek célja a vizsgált tárgyra (pl. Feature kérés) vonatkozó minél több részlet felderítése.
 * **Bug**: Hibajelentések típusa.
 
-###### Feature implementáció állapotai
+#### Board
 
-**_Implementation board állapotai_**:
+A board egy vizuális tábla, amelyen a feladatok státusza látható oszlopokba rendezve (például: To Do, In Progress, Done). Segít követni a munka előrehaladását és átláthatóvá tenni a csapat feladatait.
+
+Egy jó praktika lehet egy projektben külön board-ot tartani a tervezésnek (Grooming), kivitelezésnek (Implementation) és hibakezelésnek (Troubleshooting).
+
+Példa a board-ok oszlopelrendezésére:
+
+**_Grooming board_**
+
+* **Not Relevant Yet**: Érintetlen jegy, amely a jelenlegi fejlesztési szakaszban még nem releváns.
+* **Wait for Grooming**: A jelenlegi fejlesztési szakaszban releváns, megbeszélésre váró jegy.
+* **Under Grooming**: Megbeszélés, tisztázás vagy kidolgozás alatt álló jegy.
+* **Groomed**: Tisztázott/kidolgozott jegy.
+
+**_Implementation board_**
 
 * **Open**: Nyitott jegy, még nem foglalkoztak vele.
 * **In Progress**: A megoldás folyamatban van.
@@ -98,14 +163,7 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
 * **In Test**: Befejezett és telepített megoldás, amely tesztelésre vár.
 * **Closed**: A jegy megoldódott és lezárult.
 
-**_Feature előkészítés állapotai_**
-
-* **Not Relevant Yet**: Érintetlen jegy, amely a jelenlegi fejlesztési szakaszban még nem releváns.
-* **Wait for Grooming**: A jelenlegi fejlesztési szakaszban releváns, megbeszélésre váró jegy.
-* **Under Grooming**: Megbeszélés, tisztázás vagy kidolgozás alatt álló jegy.
-* **Groomed**: Tisztázott/kidolgozott jegy.
-
-**_Hibák állapotai_**
+**_Troubleshooting board_**
 
 * **Reported**: Jelentett jegy, amellyel még nem foglalkoztak.
 * **Incomprehensible**: Nem egyértelmű leírású jegy, amely tisztázást igényel.
@@ -114,27 +172,23 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
 * **Fixed**: A jegyet javították, de még nem ellenőrizték.
 * **Closed**: Javított, ellenőrzött és lezárt jegy.
 
-##### Roadmap
+#### Roadmap
 
 A Roadmap egy magas szintű, vizuális terv, amely bemutatja a termékfejlesztés hosszú távú irányát és a tervezett főbb funkciók, mérföldkövek kiadási ütemezését. Segít összehangolni az üzleti célokat a fejlesztési kapacitással, és kommunikációs eszköz a stakeholderek felé.
 
-##### Backlogok
-
-Minden olyan Issue, amely nem szerepel a boardon, a Backlogba kerül. A board felületén van lehetőség a backlog megnyitására és a jegyek áthelyezésére a boardra. A backlog minden boardhoz egyedi lekérdezések alapján működik, és ez a lekérdezés az igényeknek megfelelően módosítható.
-
-##### Product Backlog
+#### Product Backlog
 
 A Product Backlog egy priorizált lista, amely tartalmaz minden, a termékkel kapcsolatos követelményt, funkciót, javítást és feladatot. A Product Owner felelős a karbantartásáért. Ez a lista dinamikus, folyamatosan változik az üzleti igények és a piaci visszajelzések alapján.
 
-##### Sprint Backlog
+#### Sprint Backlog
 
 A Sprint Backlog a Product Backlogból kiválasztott elemek halmaza, amelyeket a fejlesztőcsapat a következő sprint során fog megvalósítani. A Sprint Planning során a csapat közösen állítja össze, és a sprint ideje alatt már nem bővíthető, csak a meglévő feladatok elvégzésére fókuszálnak.
 
-##### Definition of Ready (DoR)
+#### Definition of Ready (DoR)
 
 A DoR egy ellenőrzőlista, amely meghatározza, hogy egy User Story-nak vagy feladatnak milyen kritériumoknak kell megfelelnie ahhoz, hogy a csapat be tudja venni a sprintbe. Biztosítja, hogy a feladatok jól definiáltak, érthetőek és megvalósíthatóak legyenek, minimalizálva a sprint közbeni kérdéseket.
 
-##### Definition of Done (DoD)
+#### Definition of Done (DoD)
 
 A Definition of Done (DoD) egy fogalom, amelyet az agilis szoftverfejlesztési módszertanokban, különösen a Scrumban használnak. Meghatározza azokat a kritériumokat, amelyeknek egy terméknövekménynek vagy felhasználói történetnek meg kell felelnie ahhoz, hogy teljesnek és kiadásra késznek tekintsék. A DoD segít biztosítani, hogy a fejlesztőcsapat, az érdekelt felek és az ügyfelek közösen értsék, mi minősül befejezett és magas minőségű munkának.
 
@@ -165,9 +219,48 @@ A tesztelő feladata, hogy elvégezze a szükséges manuális teszteket.
 12. A dokumentáció frissítve
 A fejlesztőnek a Document Maintenance útmutató alapján frissítenie kell a dokumentációt.
 
-##### Acceptance Criteria
+#### Acceptance Criteria
 
 Azok a konkrét, tesztelhető feltételek, amelyeknek egy User Story-nak teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
+
+#### Ceremóniák
+
+A ceremóniák fontosak az együttműködés kialakításához. Az Agile módszertanban a következő típusú meetingeket használjuk:
+
+##### Daily standup
+* Cél: Általános státuszjelentés a csapat felé.
+* Gyakoriság: Heti kétszer.
+* Időtartam: Max. 30 perc.
+* Résztvevők: Fejlesztők + Scrum Master.
+* Felelős: Scrum Master.
+* Menet: Minden csapattagnak 5 perce van elmondani:
+  * Min dolgozott múlt héten.
+  * Min fog dolgozni ezen a héten.
+  * Milyen akadályokkal szembesül.
+
+##### Grooming meeting
+* Cél: Epicek és Story-k tisztázása, pontos követelmények meghatározása és leírása a ticketben.
+* Gyakoriság: Hetente 1–2 alkalom.
+* Időtartam: Max. 1,5 óra.
+* Résztvevők: Product Owner, Scrum Master, Fejlesztők.
+* Felelős: Product Owner.
+* Menet: A ticketek áttekintése, a teendők és üzleti igények megbeszélése. A Grooming board ticketjeinek átnézése.
+
+##### Sprintforduló (Sprint) 
+* Cél: A futó sprint lezárása, az új sprint fókuszának meghatározása és elindítása.
+* Gyakoriság: Általában 1–2 hetente ismétlődő ciklusok.  
+* Időtartam: Max. 1.5 óra.
+* Résztvevők: Fejlesztők, Scrum Master, Product Owner.  
+* Felelős: Scrum Master a folyamat koordinálásáért, Product Owner a backlog priorizálásáért.  
+* Menet: A csapat lezárja a futó sprintet és a fennmaradt jegyeket átviszi a következőbe, valamint kiválasztja a backlogból a további teendőket. A Csapat megtekinti a lezárt sprint Burnout chart-ját, ami képet ad a hatákonyságról.
+
+##### Retrospective meeting
+* Cél: A csapat teljesítményének és eszköztárának értékelése és fejlesztése.
+* Gyakoriság: Havonta (mérföldkövek után).
+* Időtartam: Max. 1,5 óra.
+* Résztvevők: Product Owner, Scrum Master + Fejlesztők.
+* Felelős: Opcionális.
+* Menet: A fejlesztők és az üzleti oldal elmondhatják a múlt hónapban tapasztalt reakcióikat. A cél konstruktívan meghatározni, mi ment jól, milyen külső vagy belső tényezők akadályoztak, és hol lehet javítani. Ha nincs egyértelmű megoldási javaslat, Action Itemet kell rögzíteni, amelynek felelőse a szerepkörtől és a probléma jellegétől függ.
 
 ### SDLC (Szoftverfejlesztési életciklus)
 
@@ -254,27 +347,60 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Felelős Személy**: Elsődleges: Terméktulajdonos, Másodlagos: Üzlet és Terméktervező
 
 
-# Fejlesztés
+## Fejlesztés
 
-## Alkalmazott technológiák (Technology Stack)
-### Nyelv és keretrendszer
-### Platform
+### Alkalmazott technológiák (Technology Stack)
+
+A technology stack azt jelenti, hogy egy szoftverprojektben milyen nyelveket, keretrendszereket, adatbázisokat és egyéb eszközöket használnak a fejlesztéshez. Segít átlátni, hogy a csapat milyen szakértelemmel rendelkezik, milyen költségekkel számolhatunk, és mennyire korszerű vagy népszerű a választott megoldás.
+
+#### Nyelv és keretrendszer
+
+Ide tartozik, hogy milyen programozási nyelvet és hozzá kapcsolódó keretrendszereket használ a projekt. Fontos szempontok:  
+* A csapat mennyire ért hozzá, milyen a fejlesztők elérhetősége és ára.  
+* A közösségi támogatás és dokumentáció bősége.  
+* Helyi vagy globális trendek, divatosság.  
+
+#### Kvalitás a programnyelvek tükrében
+
+Általában a komplexebb, erősebb típusbiztonságot, struktúráltabb architektúrát és fejlettebb eszköztámogatást kínáló nyelvek (pl. Java, C#, Golang, Rust) magasabb kvalitásúak, mert csökkentik a hibalehetőségeket és jobb skálázhatóságot biztosítanak.
+
+Ezzel szemben a könnyebben tanulható, belépő szintű nyelvek (pl. JavaScript, PHP, Python) gyorsan fejleszthetők és széles a közösségük, de nagyobb odafigyelést igényel a kód minőségének fenntartása, különösen komplex projektek esetén.
+
+Érdemes tehát mérlegelni a lehetőségeinket ennek fényében is, hogy megbízható, jól karbantartható és hosszú távon stabil rendszert tudjunk építeni.
+
+#### Platform
+
+Ez azt jelenti, hogy a szoftver mely környezetben fut, és milyen nyelveket érdemes használni hozzá:  
+* Mobil: iOS (Swift, Objective-C), Android (Kotlin, Java), cross-platform (Flutter/Dart, React Native/JavaScript)  
+* Desktop: Windows (C#, .NET, C++), macOS (Swift, Objective-C), Linux (Python, C++, Java)  
+* Web: frontend (JavaScript/TypeScript + React, Angular, Vue.js), backend (Node.js, Python/Django, Java/Spring, PHP/Laravel)  
+* Multiplatform: egyszerre több környezetet támogat, pl. web + mobil (React Native, Flutter, Electron)
 
 ### Termék architektúra
-#### Monolith
 
-A monolit architektúra egyetlen telepítési egységként definiálható, ahol a rendszer minden funkcióját együtt kell telepíteni. Főbb típusai:
+* Általános best practice, hogy az MVP monolitikus legyen, mert egyszerűbb, gyorsabb fejlesztést és könnyebb karbantartást tesz lehetővé.
+* Mikroszolgáltatás-alapú architektúrára érdemes váltani, ha:
+  * A kezdetektől fontos a magas terhelhetőség és skálázhatóság.
+  * A csapat rendelkezik a szükséges szakértelemmel a komplexebb rendszer kezeléséhez.
+  * A projekt hosszú távon komplex, több modulból álló funkcionalitást kíván kiszolgálni.
+
+#### Monolith vs Microservices
+
+**_Monolith_**
+
+Egy olyan szoftverarchitektúra, ahol az alkalmazás összes funkciója egyetlen, egységes kódbázisban fut. Egyszerűbb fejleszteni és telepíteni, de nagyobb méret és komplexitás esetén nehezebb skálázni. Főbb típusai:
+
 * **Egyprocesszes monolit:** A legelterjedtebb forma, ahol minden kód egyetlen processzben fut.
 * **Moduláris monolit:** A kód különálló modulokból áll, de a telepítés továbbra is egységes. Ez lehetővé teszi a párhuzamos fejlesztést, de az adatbázis gyakran közös marad, ami nehezíti a későbbi szétválasztást.
-* **Elosztott monolit:** Bár több szolgáltatásból áll, a rendszert mégis együtt kell telepíteni a szoros csatolások miatt. Ez a legrosszabb mindkét világból: az elosztott rendszerek komplexitását ötvözi a monolitok rugalmatlanságával.
-A monolitok előnye az egyszerűbb telepítés, fejlesztői folyamatok és tesztelés. Kisebb csapatoknál vagy a fejlesztés korai szakaszában gyakran ez a legésszerűbb alapértelmezett választás.
+* **Elosztott monolit:** Bár több szolgáltatásból áll, a rendszert mégis együtt kell telepíteni a szoros csatolások miatt. Ez a legrosszabb mindkét világból: az elosztott rendszerek komplexitását ötvözi a monolitok rugalmatlanságával. A monolitok előnye az egyszerűbb telepítés, fejlesztői folyamatok és tesztelés. Kisebb csapatoknál vagy a fejlesztés korai szakaszában gyakran ez az legésszerűbb alapértelmezett választás.
 
-#### Microservices
+**_Microservices_**
 
-A mikroszolgáltatási architektúra a rendszert függetlenül telepíthető, kis, üzleti képességek köré szervezett szolgáltatások gyűjteményeként építi fel. A cél a rugalmasság, skálázhatóság és a gyorsabb, független fejlesztési ciklusok lehetővé tétele.
+Egy olyan szoftverarchitektúra, ahol az alkalmazás összes funkciója egyetlen, egységes kódbázisban fut. Egyszerűbb fejleszteni és telepíteni, de nagyobb méret és komplexitás esetén nehezebb skálázni.
+
 * **Elvek:**
   * **Komponálhatóság:** A funkcionalitás könnyen újrafelhasználható különböző kontextusokban.
-  * **Domain-Driven Design (DDD):** A szolgáltatások határait az üzleti domain (pl. Bounded Context\-ek) mentén érdemes kialakítani a magas kohézió és laza csatolás érdekében.
+  * **Domain-Driven Design (DDD)::** A szolgáltatások határait az üzleti domain (pl. Bounded Context\-ek) mentén érdemes kialakítani a magas kohézió és laza csatolás érdekében.
   * **Információelrejtés:** Minden szolgáltatás elrejti a belső implementációs részleteit, és csak egy jól definiált interfészt (API) tesz közzé.
 * **Kihívások (Fájdalompontok):**
   * **Komplexitás:** Az elosztott rendszerek természetéből fakadóan bonyolultabb a fejlesztői élmény, a tesztelés, a monitorozás, a hibakeresés és az adatkonzisztencia biztosítása.
@@ -282,6 +408,30 @@ A mikroszolgáltatási architektúra a rendszert függetlenül telepíthető, ki
   * **Csatolás:** Különös figyelmet kell fordítani a csatolás típusaira (pl. el kell kerülni a Content Coupling\-ot), hogy a szolgáltatások valóban függetlenek maradjanak.
 
 A mikroszolgáltatások nem minden esetben jelentenek ideális megoldást. Leginkább nagy, gyorsan növekvő rendszereknél, SaaS alkalmazásoknál és olyan szervezeteknél előnyösek, ahol több csapat dolgozik párhuzamosan.
+
+#### SPA vs MPA
+
+**SPA (Single Page Application)**  
+Egy SPA egyetlen HTML-oldalt használ, és a felhasználói interakciók során a tartalom dinamikusan frissül JavaScript segítségével, anélkül, hogy az oldal újratöltődne.  
+* **Előnyök:**  
+  * Gyors, gördülékeny felhasználói élmény.  
+  * Modern frontend keretrendszerek támogatása.  
+  * Kisebb sávszélesség-használat, mivel nem töltődnek újra teljes oldalak.  
+* **Hátrányok:**  
+  * Lassabb kezdeti betöltés, mivel az összes JS és app logika betöltődik egyszerre.  
+  * SEO optimalizálás nehezebb, bár modern megoldásokkal (SSR, prerender) javítható.  
+* **Keretrendszerek / technológiák:** React, Angular, Vue.js, Svelte, Next.js (SSR-rel), Nuxt.js (SSR-rel)
+
+**MPA (Multi Page Application)**  
+Az MPA esetén minden oldal külön HTML-oldalként töltődik be a szerverről. A navigáció új oldalbetöltésekkel történik.  
+* **Előnyök:**  
+  * Egyszerűbb SEO, mivel minden oldal külön URL-en érhető el.  
+  * Könnyebb kezdeti betöltés, mivel csak az adott oldal tartalma töltődik.  
+  * Klasszikus webfejlesztési modell, stabil és széles körben támogatott.  
+* **Hátrányok:**  
+  * Lassabb, megszakításokkal teli felhasználói élmény a gyakori újratöltések miatt.  
+  * Több szerveroldali logika szükséges a dinamikus tartalom kezeléséhez.  
+* **Keretrendszerek / technológiák:** Django, Ruby on Rails, Laravel, Spring MVC, ASP.NET MVC
 
 ### Program architektúrák
 
@@ -302,6 +452,7 @@ A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, ad
 #### Függőségkezelés (Dependency Injection - DI)
 
 A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
+
 
 
 ## UX/UI tervezés
@@ -334,7 +485,7 @@ A használhatósági tesztek során valós felhasználókat kérünk meg, hogy v
 #### Branch nevek előtagjai
 
 * feature/: Specifikus feladatokhoz kapcsolódó branchek.
-* epic/: Nagyobb fejlesztésekhez nyitott branchek, amelyek egy projektcímkével ellátott epichez kapcsolódnak.
+* epic/: Nagyabb fejlesztésekhez nyitott branchek, amelyek egy projektcímkével ellátott epichez kapcsolódnak.
 * hotfix/: Hibajavításokhoz használt branchek, a master branchből származtatva.
 * release/: Kiadásokhoz használt branchek, a develop branchből származtatva.
 
@@ -367,7 +518,7 @@ git push --force-with-lease
 **4. Forrás branch checkout és pull:**
 ```bash
 git checkout <epic branch vagy develop>
-git pull
+<br>git pull
 ```
 
 **5. Feature branch checkout és rebase:**
@@ -644,3 +795,33 @@ A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt
 Természetesen ezeknek a mintáknak vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk." Egy másik híres mondás szerint pedig: "A memória olcsóbb, mint a programozó órabére." A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
 
 ## Dokumentáció
+
+## Linkek
+
+*   Alertmanager
+*   C
+*   Elasticsearch
+*   Fluentd
+*   Git
+*   Gitea
+*   GitLab
+*   Go
+*   Grafana
+*   Hetzner Development Infrastructure
+*   Hotjar
+*   JIRA
+*   Jenkins
+*   Kibana
+*   Loki
+*   Mixpanel
+*   NX
+*   OpenAPI
+*   OpenSearch
+*   Pest
+*   PHP
+*   Prometheus
+*   Pydantic
+*   Python
+*   Rust
+*   TypeScript
+*   YouTrack
