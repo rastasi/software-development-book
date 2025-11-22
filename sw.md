@@ -792,9 +792,25 @@ A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt
 
 ### Félelem a túltervezéstől
 
-Természetesen ezeknek a mintáknak vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk." Egy másik híres mondás szerint pedig: "A memória olcsóbb, mint a programozó órabére." A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
+Természetesen a szabályokhoz, architektúrákhoz, industry standard-ekhez való ragaszkodásnak vannak (látszólagos) vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk."
+
+A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
 
 ## Dokumentáció
+
+A dokumentáció célja, hogy a csapat munkájához kapcsolódó tudás rendezett, könnyen elérhető és naprakész formában legyen kezelve. A dokumentumok tárolása és frissítése történhet különböző vállalati eszközökben – például Confluence-ben, Google Drive-ban, Figma-ban – A lényeg, hogy minden releváns anyag központilag visszakereshető legyen, és a csapat számára egyértelmű helyen található legyen.
+
+A dokumentáció frissességét általában a rendszerben jelzett utolsó módosítás dátuma határozza meg. Ennek alapján három lejárati kategória különíthető el:
+
+* **Top Priority** – Gyorsan változó, napi működéshez szükséges dokumentumok. Ezek frissítését körülbelül 30 naponta ajánlott ellenőrizni.
+* **Normál** – Olyan tartalmak, amelyek idővel elavulhatnak, de nem tartalmaznak kritikus információt. Ezeknél kb. 180 napos felülvizsgálati ciklus az általános.
+* **Non-expire** – Múltbeli fejlesztések, történeti anyagok, amelyek nem igényelnek aktualizálást.
+
+Amennyiben a szervezet olyan eszközt használ, mint a Better Content Archiving, a rendszer automatikusan jelölheti a dokumentumok állapotát (például: lejárt, archíválásra jelölt, soha le nem járó). A dokumentumok karbantartása a dokumentum tulajdonosának feladata, de más felhasználók is jelezhetik, ha egy anyag elavult vagy törlésre érett.
+
+A dokumentációhoz különféle sablonok is használhatók (például általános oldal, gyűjtőoldal, fejlesztési dokumentációs sablon), amelyek segítik a konzisztens felépítést: címsorstruktúra, dokumentumcél, tartalomjegyzék, kategóriacímkék, automatikusan generált listák és frissítési információk.
+
+A lényeg: a dokumentáció legyen átlátható, egységes felépítésű, visszakereshető, és olyan rendszerben tárolt, amely támogatja a rendszeres karbantartást és a lejárati logikát.
 
 ## Linkek
 
