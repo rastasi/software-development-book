@@ -52,7 +52,7 @@ A PM eszközök (project management tool-ok) a projektek tervezését, feladatke
 – Projekttípus: Kis csapatok, marketing, könnyű Kanban alapú feladatkezelés.
 – Jellemző: Kártya-alapú, egyszerű, vizuális.
 
-***_Jira_**
+**_Jira_**
 
 – Fizetős? Ingyenes kis csapatnak (max 10), nagyobb csapatoknak havi díjas.
 – Projekttípus: Fejlesztőcsapatok, komplex Agile projektek, enterprise környezet.
@@ -213,7 +213,7 @@ A fejlesztő felelőssége, hogy a unit tesztek sikeresen lefussanak a CI/CD pip
 9. A kapcsolódó E2E tesztek átmentek a pipeline-on
 A fejlesztő felelőssége, hogy az end-to-end tesztek sikeresen lefussanak a CI/CD pipeline-on.
 10. A kód működik a fejlesztői környezetben (develop branch)
-A fejlesztőnek biztosítania kell, hogy a kód a Hetzner Development Infrastructure\-nek megfelelően működjön a develop branchen.
+A fejlesztőnek biztosítania kell, hogy a kód működjön az infrastruktúrában.
 11. A kapcsolódó manuális tesztek teljesültek
 A tesztelő feladata, hogy elvégezze a szükséges manuális teszteket.
 12. A dokumentáció frissítve
@@ -278,6 +278,8 @@ Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósít
 * **Developer**
 * **Test Automation Expert**
 * **DevOps Expert**
+
+> Megjegyzés: Egy induló cég nem biztos, hogy rendelkezik ilyen létszámmal. Egy fő több kalapot is hordhat.
 
 #### Specifikáció
 
@@ -453,7 +455,27 @@ A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, ad
 
 A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
 
+## Utak a minőséghez
 
+### Minőségbiztosítás
+
+A fejlesztési gyakorlatok és a minőségbiztosítás (Quality Assurance \- QA) olyan folyamatok és eszközök összessége, amelyek célja a szoftver minőségének folyamatos javítása és a hibák megelőzése. Ide tartoznak a kódolási szabványok, az automatizált tesztelés, a kódellenőrzés (code review) és a páros programozás, amelyek együttesen biztosítják, hogy a fejlesztés során a csapat magas minőségű, megbízható és karbantartható kódot állítson elő.
+
+### Technikai adósság és refaktorálás
+
+A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát. A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
+
+### Code review
+A kódellenőrzés során egy vagy több fejlesztő átnézi egy kollégájuk által írt kódot, mielőtt az beolvasztásra kerülne a közös kódbázisba. A cél a hibák, logikai problémák, a kódolási szabványoktól való eltérések és a potenciális teljesítményproblémák kiszűrése. Ez a gyakorlat nemcsak a kód minőségét javítja, hanem a tudásmegosztást és a csapatszintű felelősségvállalást is elősegíti.
+
+### Pair programming
+A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt egy munkaállomáson. Az egyikük, a "driver", írja a kódot, míg a másik, a "navigator", folyamatosan figyeli, ellenőrzi a munkát, és stratégiai iránymutatást ad. A szerepeket gyakran cserélik. Ez a módszer javítja a kód minőségét, csökkenti a hibák számát, és felgyorsítja a tudásmegosztást a csapaton belül.
+
+### Félelem a túltervezéstől
+
+Természetesen a szabályokhoz, architektúrákhoz, industry standard-ekhez való ragaszkodásnak vannak (látszólagos) vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk."
+
+A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
 
 ## UX/UI tervezés
 
@@ -775,26 +797,6 @@ A metrikák numerikus adatok, amelyeket a rendszer teljesítményéről, erőfor
 
 #### Riasztások
 A riasztások proaktívan értesítik az üzemeltető csapatot, ha a rendszerben előre definiált küszöbértékeket meghaladó vagy abnormális események történnek. A cél a problémák gyors észlelése és a beavatkozás, még mielőtt a felhasználók észlelnék a hibát. A riasztásokat általában a Prometheus (Alertmanager) vagy a Grafana segítségével konfigurálják.
-
-## Minőségbiztosítás
-
-A fejlesztési gyakorlatok és a minőségbiztosítás (Quality Assurance \- QA) olyan folyamatok és eszközök összessége, amelyek célja a szoftver minőségének folyamatos javítása és a hibák megelőzése. Ide tartoznak a kódolási szabványok, az automatizált tesztelés, a kódellenőrzés (code review) és a páros programozás, amelyek együttesen biztosítják, hogy a fejlesztés során a csapat magas minőségű, megbízható és karbantartható kódot állítson elő.
-
-### Technikai adósság és refaktorálás
-
-A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát. A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
-
-### Code review
-A kódellenőrzés során egy vagy több fejlesztő átnézi egy kollégájuk által írt kódot, mielőtt az beolvasztásra kerülne a közös kódbázisba. A cél a hibák, logikai problémák, a kódolási szabványoktól való eltérések és a potenciális teljesítményproblémák kiszűrése. Ez a gyakorlat nemcsak a kód minőségét javítja, hanem a tudásmegosztást és a csapatszintű felelősségvállalást is elősegíti.
-
-### Pair programming
-A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt egy munkaállomáson. Az egyikük, a "driver", írja a kódot, míg a másik, a "navigator", folyamatosan figyeli, ellenőrzi a munkát, és stratégiai iránymutatást ad. A szerepeket gyakran cserélik. Ez a módszer javítja a kód minőségét, csökkenti a hibák számát, és felgyorsítja a tudásmegosztást a csapaton belül.
-
-### Félelem a túltervezéstől
-
-Természetesen a szabályokhoz, architektúrákhoz, industry standard-ekhez való ragaszkodásnak vannak (látszólagos) vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk."
-
-A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
 
 ## Dokumentáció
 
