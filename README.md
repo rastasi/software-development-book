@@ -16,95 +16,90 @@ A Lean Hardware Startup szemlélet itt két módon egészíti ki a tananyagot:
 * ez a fejezet kiemeli, hogyan lehet a szoftveres iterációt hozzáilleszteni a csapat egészének tanulási folyamatához.
 A hallgatók megtanulják, hogy a szoftverfejlesztési folyamatok rugalmassága a startup működésének egyik legfontosabb versenyelőnye, ugyanakkor szigorú folyamatfegyelmet kíván, hogy a gyorsaság ne menjen a minőség rovására.
 
-### Kötelezően megjelenő fogalmak, kulcsszavak
-
-* Szoftverfejlesztési életciklus
-* Agilis fejlesztés, Scrum, Kanban
-* Roadmap, Product backlog → Sprint backlog
-* DoR - Definition of Ready
-* DoD - Definition of Done
-* User story, acceptance criteria
-* UX → UI → prototyping → usability tests
-* Szoftverarchitektúra → monolith, microservices, modularity
-* CI/CD: build, test, deploy pipeline
-* Verziókezelés: Git, branching strategies (Git-flow, trunk-based)
-* Unit test, integration test, E2E test
-* Code review, pair programming
-* Release management → Canary release, blue-green deployment
-* Monitoring, observability → logs, metrics, alerts
-* Security basics (OWASP top 10 említésszinten)
-* Technical debt, refactoring
-* Sprint ritmusok: planning, daily, review, retrospective
-
-
 ## Projektmenedzsment
 
+Ebben a fejezetben a szoftvertermékek aspektusából vizsgáljuk meg a projektmenedzsment módszereket. Egy startup esetében a projektmenedzsment kiemelt fontosságú, mert a megfelelő eszközökkel report nyerhető ki belőle a befektetők részére, valamint segíti az esetleges scope / fókusz váltásokat, pivotációt. Tudunk kell azonban, hogy a projektmenedzser is egy szakma, rengeteg módszerrel és szakirodalommal, így kellő komolysággal szükséges megvizsgálnunk a lehetőségeinket és választanunk ez alapján.
 
-Az Agile a szoftverfejlesztésben egy rugalmas megközelítés, amely gyors iterációkra, folyamatos visszajelzésre és együttműködésre épül. Számos keretrendszere létezik, például a Scrum, ahol sprintekben dolgoznak, illetve a Kanban, amely folyamatos áramlásra és munkakorlátozásra épít. A cél, hogy a csapat gyorsan és hatékonyan tudjon reagálni a változó igényekre.
+Jelen fejezet elsősorban az agilis módszertant tárgyalja. Az Agile a szoftverfejlesztésben egy rugalmas megközelítés, amely gyors iterációkra, folyamatos visszajelzésre és együttműködésre épül. Számos keretrendszere létezik, például a Scrum, ahol sprintekben dolgoznak, illetve a Kanban, amely folyamatos áramlásra és munkakorlátozásra épít. A cél, hogy a csapat gyorsan és hatékonyan tudjon reagálni a változó igényekre.
 
 ### Project management eszközök
 
-A PM eszközök (project management tool-ok) a projektek tervezését, feladatkezelést, kommunikációt és riportolást segítik. Támogatják az Agile, Scrum, Kanban vagy akár vízesés típusú munkafolyamatokat, és hatékonyabbá teszik a csapatmunkát.
+Egy szoftver fejlődésének elsődleges adminisztálási felülete egy PM tool-ban történik, amely gyakorlatilag minden esetben egy webalkalmazás, ahová a résztvevők regisztálnak és egy közös projekt feladatain dolgoznak.
+
+A PM eszközök (project management tool-ok) a projektek tervezését, feladatkezelést, kommunikációt és riportolást segítik, hatékonyabbá teszik a csapatmunkát.
+
+<u>Néhány PM eszköz rövid bemutatása:</u>
 
 **_Trello_**
 
-– Fizetős? Ingyenes alapfunkciókkal, bővített csomagok havi díjért.
-– Projekttípus: Kis csapatok, marketing, könnyű Kanban alapú feladatkezelés.
-– Jellemző: Kártya-alapú, egyszerű, vizuális.
+– Ingyenes alapfunkciókkal, bővített csomagok havi díjért.
+– Kis csapatok, marketing, könnyű Kanban alapú feladatkezelés.
+– Kártya-alapú, egyszerű, vizuális.
 
 **_Jira_**
 
-– Fizetős? Ingyenes kis csapatnak (max 10), nagyobb csapatoknak havi díjas.
-– Projekttípus: Fejlesztőcsapatok, komplex Agile projektek, enterprise környezet.
-– Jellemző: Sprintkezelés, backlog, fejlett riportok.
+– Ingyenes kis csapatnak (max 10), nagyobb csapatoknak havi díjas.
+– Fejlesztőcsapatok, komplex Agile projektek, enterprise környezet.
+– Sprintkezelés, backlog, fejlett riportok.
 
 **_Redmine_**
-– Fizetős? Ingyenes, nyílt forráskódú; saját szerveren fut.
-– Projekttípus: Olyan csapatoknak, akik testre szabható, önhostolt megoldást akarnak.
-– Jellemző: Issue-kezelés, wiki, moduláris bővíthetőség. A mai szemnek ódivatú, de funkcióját jól ellátó felülete van.
+– Ingyenes, nyílt forráskódú; saját szerveren fut.
+– Olyan csapatoknak, akik testre szabható, önhostolt megoldást akarnak.
+– Issue-kezelés, wiki, moduláris bővíthetőség.
+– A mai szemnek ódivatú, de funkcióját jól ellátó felülete van.
 
 **_YouTrack_**
-– Fizetős? Ingyenes kis csapatoknak, nagyobbaknak előfizetéses.
-– Projekttípus: Fejlesztőcsapatok, akik gyors keresésre és hatékony issue-kezelésre vágynak.
-– Jellemző: Keresőalapú workflow, Agile boardok.
+– Ingyenes kis csapatoknak, nagyobbaknak előfizetéses.
+– Fejlesztőcsapatok, akik gyors keresésre és hatékony issue-kezelésre vágynak.
+– Keresőalapú workflow, Agile boardok.
 
 **_ClickUp_**
-– Fizetős? Ingyenes alapcsomag, fejlettebb funkciókért havi díj.
-– Projekttípus: Minden típusú projekt, cégeknek akik „mindent egyben” rendszert akarnak.
-– Jellemző: Dokumentumok, dashboardok, automatizációk.
+– Ingyenes alapcsomag, fejlettebb funkciókért havi díj.
+– Minden típusú projekt, cégeknek akik „mindent egyben” rendszert akarnak.
+– Dokumentumok, dashboardok, automatizációk.
 
 **_Asana_**
-– Fizetős? Ingyenes alapcsomag, profi funkciók előfizetéssel.
-– Projekttípus: Általános csapatmunka, marketing, operations, kisebb IT-projektek.
-– Jellemző: Könnyen tanulható, vizuális tervezés, idővonal, hierarchizálható feladatok.
+– Ingyenes alapcsomag, profi funkciók előfizetéssel.
+– Általános csapatmunka, marketing, operations, kisebb IT-projektek.
+– Könnyen tanulható, vizuális tervezés, idővonal, hierarchizálható feladatok.
+
+> Pro tip: szánjuk rá az időt a választásra, nézzünk videókat az adott termékről, használjuk ki az ingyenes trial időszakokat és próbáljuk ki, melyik áll a csapatnak leginkább kézre. Egy élő projektet átmigrálni egyik rendszerből a másikba nem lehetetlen, de költséges feladat.
 
 ### Kommunikációs csatornák
 
+A PM tool-ok mellett szükséges egy csapatszintű privát instant üzenetküldő alkalmazás megléte is. Ez szöveges és videóhívásos kollaborációt egyaránt támogató szoftvereket jelent, íme néhány példa:
+
 **_Google Workspace_**  
-– Fizetős? Havidíjas csomagok, vállalati szintű szolgáltatásokkal.  
+– Havidíjas csomagok, vállalati szintű szolgáltatásokkal.  
 – Mire való: Olyan cégeknek, ahol fontos a könnyű dokumentummegosztás, valós idejű együttműködés és integrált felhőalapú működés.  
 – Jellemző: Gmail, Google Drive, Meet, Chat – minden jól integrálva egy rendszerben.
 
 **_Microsoft 365 (korábban Office 365)_**  
-– Fizetős? Előfizetéses rendszer többféle vállalati csomaggal.  
+– Előfizetéses rendszer többféle vállalati csomaggal.  
 – Mire való: Közép- és nagyvállalatoknak, ahol fontos a fejlett adminisztráció, biztonság és a klasszikus Office alkalmazások integrációja.  
 – Jellemző: Outlook, Teams, SharePoint, OneDrive – erős vállalati ökoszisztéma, strukturált kommunikációval.
 
 **_Slack_**  
-– Fizetős? Ingyenes alapverzió korlátozásokkal; teljes funkcionalitás előfizetéssel.  
+– Ingyenes alapverzió korlátozásokkal; teljes funkcionalitás előfizetéssel.  
 – Mire való: Főleg technológiai csapatoknak, ahol sok integrációra, botra és gyors csatornaalapú kommunikációra van szükség.  
 – Jellemző: Csatornák, fejlett keresés, rengeteg integráció, jól skálázódik nagy csapatokra.
 
 **_Discord_**  
-– Fizetős? Alapvetően ingyenes, opcionális fizetős funkciókkal (Nitro).  
+– Alapvetően ingyenes, opcionális fizetős funkciókkal (Nitro).  
 – Mire való: Rugalmasabb, közvetlenebb kommunikációra, kisebb vagy informálisabb csapatoknak, illetve ahol gyakori a hangalapú együttműködés.  
 – Jellemző: Hangcsatornák, egyszerű szobakezelés, gyors chat – kevésbé formális, de nagyon rugalmas eszköz.
 
+> Pro tip: Ne próbáljuk meg a privát közösségi média fiókjainkat és azoknak üzenetküldőit ilyen célra használni. Ellehetetleníti a későbbi bővítést és teret ad a véletlen adatszivárgásnak (könnyű rossz helyre megosztani egy dokumentumot például)
+
 ### Globális fogalmak
+
+Az alábbiakban néhány alapvető fogalmat tekintünk át, amelyek gyakran elhangoznak a projektmenedzmsent során.
 
 #### Projekt
 
 A projekt egy időben behatárolt, egyedi cél elérésére irányuló, erőforrásokkal és költségkerettel rendelkező tevékenységcsoport. Van kezdete, vége, konkrét eredménye, és egy adott problémára vagy igényre ad megoldást.
+
+> Megjegyzés: Egy termék fejlesztését is hívhatjuk projektnek és a PM rendszerekben egy projektben kezelhetjük a termék teljes életciklusát, ugyanakkor lehetőségünk van egy termék nagyobb fejlesztési etapj-it külön projektként kezelni.
 
 #### User (Felhasználó)
 
@@ -114,11 +109,15 @@ Az alkalmazás felhasználója, azaz az a személy, aki az alkalmazást használ
 
 A termék vízióját és elvárásait megfogalmazó személy(ek), akiknek feladata a koncepciók, követelmények, nagy vonalakban felvázolt tervek és mérföldkövek meghatározása a fejlesztők számára.
 
+> Megjegyzés: Egy néhány fős startup csapat esetén elképzelhető, hogy a szoftvert kivitelező személy egyben a business része is. Azi ilyen kalapok meghatározása azonban segít a kommunikációban és a későbbi skálázódásban.
+
 #### Issue (Feladat)
 
 Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, amely minden boardra jellemző. Nevezik még Ticket-nek, Task-nak is, valamint ha egy Issue egy boardhoz van társítva, azt kártyának is nevezik. 
 
 **_Issue típusok_**
+
+Az alábbiakban nézzünk meg néhány, az Agile-ban szokásos issue típust és leírásukat:
 
 * **Epic**: Egy adott téma/funkció köré szerveződő gyűjtőkártya, amely egy nagyobb egységet alkot.
   * Segít a nagyobb kép megértésében.
@@ -133,16 +132,18 @@ Az Issue egy megoldandó feladatot jelöl. Van egy típusa és egy állapota, am
   * Kisebb alegység, amely önmagában nem feltétlenül nyújt felhasználói élményt.
   * A Story-t az összes benne lévő Task elvégzése után tekintjük befejezettnek.
 * **Test**: Kisebb alegység (a Task-kal egyenértékű), amely a tesztelési fázis átláthatóságát hivatott lefedni.
+* **Bug**: Hibajelentések típusa.
 * **Spike**: Olyan típus, amely nem igényel valódi implementációt, de szükséges egy adott fejlesztés összes technikai részletének feltárásához, a nehézségek meghatározásához stb.
   * Minden Spike-hoz meg kell határozni egy kívánt eredményt, amely a Spike célját képviseli (pl. Proof of Concept).
   * A Spike során elengedhetetlen az alapos és rendszeres dokumentáció, amelynek célja a vizsgált tárgyra (pl. Feature kérés) vonatkozó minél több részlet felderítése.
-* **Bug**: Hibajelentések típusa.
+
+> Pro tip: Próbáljuk meg a lehető leginkább az Agile által előírt hámashoz (Epic-Story-Task) tartani magunkat és csak indukolt esetben térjünk el tőle. Gyakori hiba a kező projektmenedzsmentben a komplexitás felesleges növelése a feladattípusok túlszaporításával.
 
 #### Board
 
 A board egy vizuális tábla, amelyen a feladatok státusza látható oszlopokba rendezve (például: To Do, In Progress, Done). Segít követni a munka előrehaladását és átláthatóvá tenni a csapat feladatait.
 
-Egy jó praktika lehet egy projektben külön board-ot tartani a tervezésnek (Grooming), kivitelezésnek (Implementation) és hibakezelésnek (Troubleshooting).
+> Pro tip: Egy jó praktika lehet egy projektben külön board-ot tartani a tervezésnek (Grooming), kivitelezésnek (Implementation) és hibakezelésnek (Troubleshooting).
 
 Példa a board-ok oszlopelrendezésére:
 
@@ -199,15 +200,15 @@ A fejlesztő felelőssége, hogy a kód a saját gépén megfelelően működjö
 2. Az elfogadási kritériumok teljesültek
 A fejlesztőnek biztosítania kell, hogy a feladat megfeleljen az aktuális JIRA jegyben rögzített összes elfogadási kritériumnak.
 3. A közös rétegszerkezet teljesült
-A fejlesztőnek követnie kell a Backend Development Guideline és Frontend Development Guideline dokumentumokban leírtakat.
+A fejlesztőnek követnie kell a sztenderdeket, melyeket a cégen belül dokumentáltunk.
 4. A kapcsolódó OpenAPI definíciók megírva
-A fejlesztő felelőssége, hogy az OpenAPI in layers dokumentációnak megfelelően elkészítse a szükséges OpenAPI definíciókat.
+A fejlesztő felelőssége, hogy  elkészítse a szükséges OpenAPI definíciókat.
 5. A kapcsolódó Unit tesztek megírva
-A fejlesztőnek a PHP testing/Pest útmutató alapján kell elkészítenie a unit teszteket.
+A fejlesztőnek az új/módosult fejlesztéshez el kell készítenie az azokat lefedő unit teszteket.
 6. A kapcsolódó E2E tesztek megírva
 A tesztelő feladata, hogy a funkcióhoz kapcsolódó end-to-end teszteket megírja.
 7. A kód felülvizsgálva
-A vezető fejlesztőnek a GIT Workflow Guideline alapján felül kell vizsgálnia a kódot.
+A vezető fejlesztőnek át kell néznie a kódot és ha engedélyeznie a módosítás bekerülését a szülő ágba vagy módosítást kérnie.
 8. A kapcsolódó unit tesztek átmentek a pipeline-on
 A fejlesztő felelőssége, hogy a unit tesztek sikeresen lefussanak a CI/CD pipeline-on.
 9. A kapcsolódó E2E tesztek átmentek a pipeline-on
@@ -217,11 +218,15 @@ A fejlesztőnek biztosítania kell, hogy a kód működjön az infrastruktúráb
 11. A kapcsolódó manuális tesztek teljesültek
 A tesztelő feladata, hogy elvégezze a szükséges manuális teszteket.
 12. A dokumentáció frissítve
-A fejlesztőnek a Document Maintenance útmutató alapján frissítenie kell a dokumentációt.
+A fejlesztőnek frissítenie kell a dokumentációt.
+
+> Pro tip: Csak olyan pontot rakjunk a DoD dokumentációba amit valóban képesek is vagyunk betartani. A cél nem az, hogy papírforma szerint mintaprojektünk legyen, hanem az, hogy olyan ellenörzőlistánk legyen ami valóban segítséget nyújt a kódminőség javulásához.
 
 #### Acceptance Criteria
 
-Azok a konkrét, tesztelhető feltételek, amelyeknek egy User Story-nak teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
+Azok a konkrét, tesztelhető feltételek, amelyeknek teljesülnie kell ahhoz, hogy "kész"-nek (Done) minősüljön. Egyértelművé teszik a követelményeket, és alapot adnak a teszteléshez.
+
+> Megjegyzés: Az AC-t írhatja a projektmenedzser és a fejlesztő is, ez megegyezés kérdése.A Projektmenedzser azt írja le, "mit szeretnék látni", a fejlesztő pedig azt, hogy "így tudod letesztelni amit leprogramoztam".
 
 #### Ceremóniák
 
@@ -262,91 +267,75 @@ A ceremóniák fontosak az együttműködés kialakításához. Az Agile módsze
 * Felelős: Opcionális.
 * Menet: A fejlesztők és az üzleti oldal elmondhatják a múlt hónapban tapasztalt reakcióikat. A cél konstruktívan meghatározni, mi ment jól, milyen külső vagy belső tényezők akadályoztak, és hol lehet javítani. Ha nincs egyértelmű megoldási javaslat, Action Itemet kell rögzíteni, amelynek felelőse a szerepkörtől és a probléma jellegétől függ.
 
+> Pro tip: Csak olyan meeting-et tartjunk meg, aminek érezzük az értelmét. Azért retrospektívet tartani hetente, hogy elmondhassuk, hogy mi agilisek vagyunk, puszta időpazarlás. Ahogy daily standup-ot is lehet, érdemes csak heti kétszer tartani, a többi napon pedig írásban egyeztetni. A csapatnak mérlegelnie kell, hogyan lesznek efektívek a megbeszélések és hogyan nem mennek a megvalósítás kárára. 
+
 ### SDLC (Szoftverfejlesztési életciklus)
 
 A szoftverfejlesztési életciklus (Software Development Life Cycle – SDLC) egy strukturált folyamat, amely a szoftver tervezésétől, fejlesztésétől és tesztelésétől a telepítésen át a karbantartásig terjed. A ciklus fő szakaszai a követelményanalízis, tervezés, implementáció, tesztelés, telepítés (deployment) és karbantartás. A modern, agilis megközelítések ezeket a szakaszokat rövid, iteratív ciklusokban ismétlik, lehetővé téve a rugalmas alkalmazkodást a változó igényekhez.
 
-Ez a dokumentum leírja a SCRUM csapat számára, hogyan tervezhet és valósíthat meg egy új funkciót a szoftvertermékeinkben.
+Az alábbiakban egy valós példát tekintünk meg, hogyan tervezhetünk és valósíthatunk meg egy új funkciót a szoftvertermékeinkben.
 
-#### Résztvevők
-
-* **Business**
-* **SCRUM Team**
-* **Product owner**
-* **Engineering Team Lead**
-* **Product Designer**
-* **Developer**
-* **Test Automation Expert**
-* **DevOps Expert**
-
-> Megjegyzés: Egy induló cég nem biztos, hogy rendelkezik ilyen létszámmal. Egy fő több kalapot is hordhat.
-
-#### Specifikáció
+#### Példa SDLC folyamat
 
 **Üzleti igények**
 
-* **Leírás**: Fel kell fedeznünk a felhasználói igényeket és le kell írnunk egy funkcióigényt (FR), amely üzleti értéket képvisel. Ez a lépés egy üzleti döntés, amely nem tartozik a dokumentum hatálya alá. Az üzleti igény megléte előfeltétel.
-* **Felelős Személy**: Elsődleges: Üzlet, Másodlagos: Terméktervező
-* **Kapcsolódó dokumentumok**: Feature Creation Process Guideline
+* **Leírás**: Fel kell tárnunk a felhasználói igényeket és le kell írnunk egy feature request-et (FR), amely üzleti értéket képvisel.
+* **Felelős személy**: Business
 
-**Tervezés**
+**UX/UI design**
 
-* **Leírás**: A tervező feladata, hogy együtt érezzen a felhasználói igényekkel, kidolgozza a felhasználói perszónákat, és olyan terveket készítsen, amelyek megoldják a felhasználó problémáit. A tervek ellenőrzése használhatósági tesztekkel. A terméktulajdonos felelős a statisztikai eszközök (Mixpanel, Hotjar) összekapcsolásáért.
-* **Felelős Személy**: Elsődleges: Terméktervező, Másodlagos: Terméktulajdonos
-* **Felülvizsgáló**: Elsődleges: Üzlet, Másodlagos: Mérnöki csapatvezető
-* **Kapcsolódó dokumentumok**: Product Design Development Guideline
+* **Leírás**: A UX/UI designer feladata, hogy  kidolgozza a felhasználói perszónákat, és olyan terveket készítsen, amelyek megoldják az adott fejlesztés kapcsán a felhasználó problémáit. A tervek usability test-eknek kell alávetni. (meg kell mutatnunk egy fókuszcsoportnak, akik véleményezhetik a kattintható prototípust)
+* **Felelős személy**: UX/UI Designer
+* **Felülvizsgáló**: Business
 
 **Műszaki specifikáció**
 
-* **Leírás**: A mérnöki csapatvezető kidolgozza az FR műszaki részleteit (egy Epic-ben), és a munka részeit story-kra bontja.
-* **Felelős Személy**: Mérnöki csapatvezető
+* **Leírás**: A Engineering Team Lead kidolgozza az FR műszaki részleteit és a munka részeit story-kra bontja.
+* **Felelős személy**: Engineering Team Lead
 * **Felülvizsgáló**: SCRUM csapat
-* **Kapcsolódó dokumentumok**: Issue Specification Guideline
 
-#### Implementáció előkészítése
+##### Implementáció előkészítése
 
 **Közös tervezési ülés és Grooming**
 
 * **Leírás**: A SCRUM csapatnak át kell néznie a story-kat a Grooming előtt, és segítenie kell azok kiterjesztésében és tisztázásában a jobb megértés és a gördülékenyebb Grooming megbeszélés érdekében.
-* **Felelős Személy**: SCRUM csapat
-* **Kapcsolódó dokumentumok**: SCRUM Meeting Types | Grooming Meeting
+* **Felelős személy**: SCRUM csapat
 
 **Prioritizálás**
 
-* **Leírás**: A megbeszélt és időbecsült feladatokat a terméktulajdonosnak kell priorizálnia. Ebben a lépésben a terméktulajdonos dönti el, hogy a következő sprint tartalmazhatja-e a feladatot. A terméktulajdonos tájékoztatja a marketinget és kitölti a termékkiadási egyoldalast.
-* **Felelős Személy**: Terméktulajdonos
-* **Felülvizsgáló**: Üzlet
-* **Kapcsolódó dokumentumok**: Product Release Process
+* **Leírás**: A megbeszélt és időbecsült feladatokat a Product Owner-nek kell priorizálnia. Ebben a lépésben a Product Owner dönti el, hogy a következő sprint tartalmazhatja-e a feladatot. A Product Owner tájékoztatja a marketinget a fejlesztés részleteiről és a bevezetés várható idejéről.
+* **Felelős személy**: Product Owner
+* **Felülvizsgáló**: Businesss
 
-#### Implementáció
+##### Implementáció
 
 **Kódolás**
 
-* **Leírás**: Programozás: A fejlesztő a programozási irányelveinkkel együtt módosításokat hajt végre a szoftverben. Kódellenőrzés: Hozzon létre egy pull requestet, amelyet a mérnöki csapatvezetőnek kell felülvizsgálnia és jóváhagynia.
-* **Felelős Személy**: Fejlesztő
-* **Felülvizsgáló**: Mérnöki csapatvezető
-* **Kapcsolódó dokumentumok**: Backend Development Guideline, Technology Stack
+* **Leírás**: Programozás: A fejlesztő a programozási irányelveinkkel együtt módosításokat hajt végre a szoftverben. Kódellenőrzés: Hozzon létre egy pull requestet, amelyet a Engineering Team Leadnek kell felülvizsgálnia és jóváhagynia.
+* **Felelős személy**: Fejlesztő
+* **Felülvizsgáló**: Engineering Team Lead
 
 **Tesztelés**
 
 * **Leírás**: Az egységteszteket a fejlesztő hozza létre, a manuális tesztdokumentációt pedig a QA szakértő. Az implementáció vége akkor érhető el, ha megfelel a DoD-nek (Definition of Done).
-* **Felelős Személy**: SCRUM csapat, QA szakértő
-* **Kapcsolódó dokumentumok**: Definition of Done
+* **Felelős személy**: SCRUM csapat, QA szakértő
 
 **Kiadás**
 
 * **Leírás**: Ha a funkcióigény megfelel a Definition of Done-nak, a DevOps szakértő vagy a SCRUM csapat telepíti azt az éles környezetbe. A kiadás után a QA szakértő ellenőrzi a funkciót az éles környezetben is, és ha problémát talál, szól a fejlesztőknek.
-* **Felelős Személy**: SCRUM csapat, DevOps szakértő, QA szakértő, Terméktulajdonos
+* **Felelős személy**: SCRUM csapat, DevOps szakértő, QA szakértő, Product Owner
 
-#### Utókövetés
+##### Utókövetés
 
 **Marketing**
 
-* **Leírás**: A terméktulajdonos tájékoztatja a marketing csapatot, hogy a funkció elkészült.
-* **Felelős Személy**: Üzlet
+* **Leírás**: A Product Owner tájékoztatja a marketing csapatot, hogy a funkció elkészült.
+* **Felelős személy**: Üzlet
 **Nyomon követés**
 * **Leírás**: Ellenőrizze a Mixpanel és a Hotjar eredményeket, foglalja össze, és hozzon létre egy funkcióigényt (FR). Kezelje a BÉTA teszteket és a funkciózászlókat.
-* **Felelős Személy**: Elsődleges: Terméktulajdonos, Másodlagos: Üzlet és Terméktervező
+* **Felelős személy**: Product Owner
+
+> Pro tip: Mindig a valóságból induljunk ki! Egy pár hetes-hónapos csapatnak nincsenek kialakult SDLC folyamatai. Várjuk meg, míg kialakul egy rend és írjuk le. Ez után ezt a leírást rövid iterációkban változtatva változtathatunk, javíthatunk céges szokásainkon!
 
 
 ## Fejlesztés
@@ -360,7 +349,9 @@ A technology stack azt jelenti, hogy egy szoftverprojektben milyen nyelveket, ke
 Ide tartozik, hogy milyen programozási nyelvet és hozzá kapcsolódó keretrendszereket használ a projekt. Fontos szempontok:  
 * A csapat mennyire ért hozzá, milyen a fejlesztők elérhetősége és ára.  
 * A közösségi támogatás és dokumentáció bősége.  
-* Helyi vagy globális trendek, divatosság.  
+* Helyi vagy globális trendek, divatosság.
+
+> Pro tip: Egy termék programnyelvének megválasztása a cég CTO-jának talán legfontosabb döntése. Míg ügyes programozói praktikákkal keretrendszerek között lehetséges a migrálás, egyik nyelvről a másikra való átállás a termék teljes újraírását jelenti.
 
 #### Kvalitás a programnyelvek tükrében
 
@@ -370,21 +361,21 @@ Ezzel szemben a könnyebben tanulható, belépő szintű nyelvek (pl. JavaScript
 
 Érdemes tehát mérlegelni a lehetőségeinket ennek fényében is, hogy megbízható, jól karbantartható és hosszú távon stabil rendszert tudjunk építeni.
 
+> Megjegyzés: A fenti példák erős általánosításnak tűnhetnek és természetesen adad üdítő kivétel is szép számmal.
+
 #### Platform
 
 Ez azt jelenti, hogy a szoftver mely környezetben fut, és milyen nyelveket érdemes használni hozzá:  
 * Mobil: iOS (Swift, Objective-C), Android (Kotlin, Java), cross-platform (Flutter/Dart, React Native/JavaScript)  
 * Desktop: Windows (C#, .NET, C++), macOS (Swift, Objective-C), Linux (Python, C++, Java)  
-* Web: frontend (JavaScript/TypeScript + React, Angular, Vue.js), backend (Node.js, Python/Django, Java/Spring, PHP/Laravel)  
+* Web: frontend (JavaScript/TypeScript + React, Angular, Vue.js), backend (Node.js, Python/Django, Java/Spring, PHP/Laravel, Golang)  
 * Multiplatform: egyszerre több környezetet támogat, pl. web + mobil (React Native, Flutter, Electron)
+
+> Megjegyzés: a szoftver startup-ok nagy része a termék platformjaként mobilapplikációval támogatott webalkalmazásokat mint SaaS terméket fejleszt.
 
 ### Termék architektúra
 
-* Általános best practice, hogy az MVP monolitikus legyen, mert egyszerűbb, gyorsabb fejlesztést és könnyebb karbantartást tesz lehetővé.
-* Mikroszolgáltatás-alapú architektúrára érdemes váltani, ha:
-  * A kezdetektől fontos a magas terhelhetőség és skálázhatóság.
-  * A csapat rendelkezik a szükséges szakértelemmel a komplexebb rendszer kezeléséhez.
-  * A projekt hosszú távon komplex, több modulból álló funkcionalitást kíván kiszolgálni.
+Az alábbiakban megnézünk két fontos aspektust ami mentén a legnagyobb architektúrális döntéseket meg kell hoznunk. Szembeállítjuk a monolítikus fejlesztést az elosztott rendszerekkel, valamint a modern webtechnológia alapjait képző SPA rendszereket a klasszikus megoldásokkal.
 
 #### Monolith vs Microservices
 
@@ -411,7 +402,11 @@ Egy olyan szoftverarchitektúra, ahol az alkalmazás összes funkciója egyetlen
 
 A mikroszolgáltatások nem minden esetben jelentenek ideális megoldást. Leginkább nagy, gyorsan növekvő rendszereknél, SaaS alkalmazásoknál és olyan szervezeteknél előnyösek, ahol több csapat dolgozik párhuzamosan.
 
+> Pro tip:  Általános best practice, hogy az MVP monolitikus legyen, mert egyszerűbb, gyorsabb fejlesztést és könnyebb karbantartást tesz lehetővé. Mikroszolgáltatás-alapú architektúrával kezdeni a fejlesztést akkor érdemes, ha  kezdetektől fontos a magas terhelhetőség és skálázhatóság és a csapat rendelkezik a szükséges szakértelemmel a komplexebb rendszer kezeléséhez.
+
 #### SPA vs MPA
+
+Ennek az összeshasonlításnak akkor van létjogosultsága, ha a termékünk web alapú. Ebben az esetben mindenféleképpen el kell dönteünk, hogy SPA vagy MPA szemléletet követünk-e.
 
 **SPA (Single Page Application)**  
 Egy SPA egyetlen HTML-oldalt használ, és a felhasználói interakciók során a tartalom dinamikusan frissül JavaScript segítségével, anélkül, hogy az oldal újratöltődne.  
@@ -420,20 +415,22 @@ Egy SPA egyetlen HTML-oldalt használ, és a felhasználói interakciók során 
   * Modern frontend keretrendszerek támogatása.  
   * Kisebb sávszélesség-használat, mivel nem töltődnek újra teljes oldalak.  
 * **Hátrányok:**  
-  * Lassabb kezdeti betöltés, mivel az összes JS és app logika betöltődik egyszerre.  
+  * Lassabb kezdeti betöltés, mivel az összes JS és app logika betöltődik egyszerre. (lazy loading megoldás lehet rá)
   * SEO optimalizálás nehezebb, bár modern megoldásokkal (SSR, prerender) javítható.  
 * **Keretrendszerek / technológiák:** React, Angular, Vue.js, Svelte, Next.js (SSR-rel), Nuxt.js (SSR-rel)
 
 **MPA (Multi Page Application)**  
 Az MPA esetén minden oldal külön HTML-oldalként töltődik be a szerverről. A navigáció új oldalbetöltésekkel történik.  
 * **Előnyök:**  
-  * Egyszerűbb SEO, mivel minden oldal külön URL-en érhető el.  
+  * Egyszerűbb SEO, mivel minden oldal külön URL-en érhető el.
   * Könnyebb kezdeti betöltés, mivel csak az adott oldal tartalma töltődik.  
   * Klasszikus webfejlesztési modell, stabil és széles körben támogatott.  
 * **Hátrányok:**  
   * Lassabb, megszakításokkal teli felhasználói élmény a gyakori újratöltések miatt.  
   * Több szerveroldali logika szükséges a dinamikus tartalom kezeléséhez.  
 * **Keretrendszerek / technológiák:** Django, Ruby on Rails, Laravel, Spring MVC, ASP.NET MVC
+
+> Pro tip: A réteg szeparációt kiválóan támogatja egy komplex rendszer esetén az SPA megközelítés. A megjelenítés és a logika így garantáltan elválik egymástól így a felhasználó interfészek részére erősen javallott. Ám olyan alacsony komplexitású és a felhasználó elé nem kerülő felületeken mint a backoffice interfészek, alkalmazhatunk MPA megközelítést. Például Ruby on Rails backend kiszolgálhat egy Vue alapú SPA frontend-et, ugyanakkor egy ActiveAdmin modullal egy backoffice-t.
 
 ### Program architektúrák
 
@@ -443,9 +440,7 @@ A modularitás egy szoftverarchitekturális elv, amely a rendszert független, c
 
 #### Rétegek (layers)
 
-A szoftverarchitektúrában a rétegek szétválasztása egy bevett gyakorlat. Különböző modellek léteznek, mint például a klasszikus Model-View-Controller (MVC), vagy a részletesebb, Domain-Driven Design (DDD) által inspirált modellek, mint az Entities \-> Use Cases \-> Interface Adapters \-> Frameworks & Drivers. A rétegekre bontásnak számos előnye van: a modulok könnyen "mockolhatóak" (szimulálhatóak), ami a tesztelést segíti; a kódbázis szervezettebbé válik; a struktúra fix és követhető lesz; a közös kódbázis kialakítását pedig a fix elnevezési konvenciók segítik. Minden réteg egy "fekete doboz", ami elrejti a belső implementációt, és csak a publikus interfészt teszi láthatóvá. Ez a modularitás, a könnyebb tesztelhetőség és a jobb karbantarthatóság alapja. A "Facade" service-ek (homlokzati szolgáltatások) tiszta interfészt biztosítanak több szolgáltatási osztályhoz egyszerre, lehetővé téve a kisebb és fókuszáltabb szolgáltatási osztályok létrehozását, az üzleti logika olvashatóságát, és csökkentve a privát segédfüggvények számát.
-A döntések elhalasztása (Decision Postponement)
-A rétegzett architektúra támogatja a "decision postponement" elvét, azaz a döntések elhalasztását, amíg elegendő információ áll rendelkezésre a legjobb választáshoz. Ez rugalmasságot biztosít a jövőbeli változásokhoz, jobb döntéseket eredményez a teljesebb információk alapján, költséghatékonyabb, mert elkerüli a felesleges fejlesztési erőfeszítéseket, és skálázhatóbbá teszi az architektúrát, amely a valós igényekkel együtt fejlődhet. Például általános megoldásokat hozhatunk létre, amelyek különböző felhasználási esetekkel működnek, vagy olyan repository osztályokat, amelyek nincsenek adatelérési technológiához kötve.
+A szoftverarchitektúrában a rétegek szétválasztása egy bevett gyakorlat. Különböző modellek léteznek, mint például a klasszikus Model-View-Controller (MVC), vagy a részletesebb, Domain-Driven Design (DDD) által inspirált modellek, mint az Entities \-> Use Cases \-> Interface Adapters \-> Frameworks & Drivers. A rétegekre bontásnak számos előnye van: a modulok könnyen "mockolhatóak" (szimulálhatóak), ami a tesztelést segíti; a kódbázis szervezettebbé válik; a struktúra fix és követhető lesz; a közös kódbázis kialakítását pedig a fix elnevezési konvenciók segítik. Minden réteg egy "fekete doboz", ami elrejti a belső implementációt, és csak a publikus interfészt teszi láthatóvá. Ez a modularitás, a könnyebb tesztelhetőség és a jobb karbantarthatóság alapja. A "Facade" service-ek tiszta interfészt biztosítanak több szolgáltatási osztályhoz egyszerre, lehetővé téve a kisebb és fókuszáltabb szolgáltatási osztályok létrehozását, az üzleti logika olvashatóságát, és csökkentve a privát segédfüggvények számát.
 
 #### Adattranszfer objektumok (DTOs)
 
@@ -455,27 +450,41 @@ A DTO-k (Data Transfer Objects) összetett adatstruktúrák szállítására, ad
 
 A dependency injection (DI) egy olyan tervezési minta, amelynek célja a lazán csatolt komponensek létrehozása. A DI támogatja a "mocking"-ot, központi függőségi fát hoz létre, és könnyű hozzáférést biztosít a függőségekhez. Csökkenti a kódbázist ott, ahol beinjektáljuk a függőséget, és a függő osztálynak nem kell tudnia a függőség implementációjáról. A függőség példányosítása nem a függő osztály hatásköre. Uncle Bob szerint a DI a tiszta kód és a skálázhatóság egyik alapköve.
 
+#### A döntések elhalasztása (Decision Postponement)
+
+A rétegzett architektúra támogatja a "decision postponement" elvét, azaz a döntések elhalasztását, amíg elegendő információ áll rendelkezésre a legjobb választáshoz. Ez rugalmasságot biztosít a jövőbeli változásokhoz, jobb döntéseket eredményez a teljesebb információk alapján, költséghatékonyabb, mert elkerüli a felesleges fejlesztési erőfeszítéseket, és skálázhatóbbá teszi az architektúrát, amely a valós igényekkel együtt fejlődhet. Például általános megoldásokat hozhatunk létre, amelyek különböző felhasználási esetekkel működnek, vagy olyan repository osztályokat, amelyek nincsenek adatelérési technológiához kötve.
+
+> Pro tip: A fontos, hogy konzekvens és dokumentált elveink és megoldásaink legyenek. Nem szükségszerű, hogy Model-Repository-Service-Controller rétegződést használjunk, ha az adott nyelv adott keretrendszerében más a best practise. Ami számít, az a következetesség, hogy egységes képet mutasson a kódbázis.
+
 ## Utak a minőséghez
 
 ### Minőségbiztosítás
 
 A fejlesztési gyakorlatok és a minőségbiztosítás (Quality Assurance \- QA) olyan folyamatok és eszközök összessége, amelyek célja a szoftver minőségének folyamatos javítása és a hibák megelőzése. Ide tartoznak a kódolási szabványok, az automatizált tesztelés, a kódellenőrzés (code review) és a páros programozás, amelyek együttesen biztosítják, hogy a fejlesztés során a csapat magas minőségű, megbízható és karbantartható kódot állítson elő.
 
-### Technikai adósság és refaktorálás
+### Tech debt és refaktorálás
 
-A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát. A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
+A technikai adósság (technical debt) a fejlesztés során hozott, tudatos vagy nem tudatos kompromisszumok (pl. egy gyors, de nem optimális megoldás választása) felhalmozódott "költsége". Hosszú távon ez a "kölcsön" kamatozik: nehezíti a karbantartást, lassítja az új funkciók fejlesztését és növeli a hibák kockázatát.
+
+A **refaktorálás** az a folyamat, amely során a kód belső szerkezetét javítjuk anélkül, hogy a külső viselkedése megváltozna. A refaktorálás a technikai adósság "törlesztésének" egyik legfontosabb eszköze, amely tisztábbá, érthetőbbé és könnyebben bővíthetővé teszi a kódot.
+
+> Pro tip: Adjuk meg az időt a refaktorációnak. Ha kell, vonjunk be külső szakértőt, aki egy tisztább, skálázhatóbb irányba segít terelni minket. A gyakorlatban az MVP-ket NEM írjuk újra egy tőkebevonás és csapatbővítés után. Érdemes tehát úgy hozzáállni az MVP-hez, hogy azt fogjuk továbbvinni az exit-ig.
 
 ### Code review
 A kódellenőrzés során egy vagy több fejlesztő átnézi egy kollégájuk által írt kódot, mielőtt az beolvasztásra kerülne a közös kódbázisba. A cél a hibák, logikai problémák, a kódolási szabványoktól való eltérések és a potenciális teljesítményproblémák kiszűrése. Ez a gyakorlat nemcsak a kód minőségét javítja, hanem a tudásmegosztást és a csapatszintű felelősségvállalást is elősegíti.
+
+> Pro tip: A code review egy időigényes folyamat. Minél jobban dokumentált elvek szerint programozik a csapatunk, annál könnyebb a review is, mert csak a valós fejlesztésre: az adatstruktúrákra (model layer, DTO properties) és az üzleti logikára (service layer) kell fókuszálni.
 
 ### Pair programming
 A páros programozás egy agilis technika, ahol két fejlesztő dolgozik együtt egy munkaállomáson. Az egyikük, a "driver", írja a kódot, míg a másik, a "navigator", folyamatosan figyeli, ellenőrzi a munkát, és stratégiai iránymutatást ad. A szerepeket gyakran cserélik. Ez a módszer javítja a kód minőségét, csökkenti a hibák számát, és felgyorsítja a tudásmegosztást a csapaton belül.
 
 ### Félelem a túltervezéstől
 
-Természetesen a szabályokhoz, architektúrákhoz, industry standard-ekhez való ragaszkodásnak vannak (látszólagos) vannak hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt. Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk."
+Természetesen a szabályokhoz, architektúrákhoz, industry standard-ekhez való ragaszkodásnak vannak (látszólagos) hátrányai is. A rétegek, DTO-k és a DI használata teljesítmény- és komplexitásbeli "overhead"-et (többletterhet) jelenthet, például a "boilerplate" kód (sablonkód) és a módosítási láncok miatt.
 
-A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül.
+Azonban, ahogy Uncle Bob mondja: "A kódot másoknak írjuk."
+
+> Pro tip: A szoftverzervezés és fejlesztés immáron több mint fél évszázados múltra tekint vissza. A tiszta, érthető és karbantartható kód hosszú távon mindig megtérül. A minél hamarabbi iterációkat kergetve nem hesegethetjük el a komplex rendszerek gondolatát és cserélhetjük fel quick&dirty megoldásokra.
 
 ## UX/UI tervezés
 
@@ -484,27 +493,20 @@ Az UX (User Experience) és UI (User Interface) tervezés célja, hogy a szoftve
 ### Prototipizálás
 A prototípus-készítés során a tervezett funkciók vagy a teljes felület interaktív, de még nem végleges változatát hozzuk létre. A prototípusok lehetnek alacsony részletességű drótvázak (wireframe) vagy nagy részletességű, a végleges termékhez nagyon hasonló vizuális tervek. Céljuk a koncepciók gyors tesztelése, a felhasználói visszajelzések korai gyűjtése és a fejlesztési kockázatok csökkentése, mielőtt a tényleges kódolás megkezdődne.
 
+> Pro tip: Ezen a ponton és csakis ezen a ponton megtehetjük, hogy egy kattintható prototípust mesterséges intelligencia segítségével hozunk létre (példul: Lovable). Ezt azonban semmiképp ne keverjük össze az MVP-vel. A jelenlegi LLM-ek nem képesek olyan kódminőségben komplex programokat előállítani, amelyek megbízhatóak, fenntarthatóak. Természetesen használhatjuk a programozáshoz a különböző AI tool-okat de csakis alapos átnézést követően engedjük be a bódosításokat kódbázis főáramába.
+
 ### Használhatósági tesztek
-A használhatósági tesztek során valós felhasználókat kérünk meg, hogy végezzenek el előre meghatározott feladatokat a szoftverrel vagy annak prototípusával. A cél annak megfigyelése, hogy a felhasználók mennyire hatékonyan, eredményesen és elégedetten tudják használni a rendszert. A tesztek során feltárt problémák (pl. nehezen érthető funkciók, logikai buktatók) alapján finomítható a termék a jobb felhasználói élmény érdekében.
-
-
+A használhatósági tesztek (usability tests) során valós felhasználókat kérünk meg, hogy végezzenek el előre meghatározott feladatokat a szoftverrel vagy annak prototípusával. A cél annak megfigyelése, hogy a felhasználók mennyire hatékonyan, eredményesen és elégedetten tudják használni a rendszert. A tesztek során feltárt problémák (pl. nehezen érthető funkciók, logikai buktatók) alapján finomítható a termék a jobb felhasználói élmény érdekében.
 
 ## Verziókezelés
 
-### Git workflow útmutató
-
-#### Mono-repository
-
-* Mono-repository mintát alkalmazunk, ami azt jelenti, hogy minden termékünk egyetlen GIT repository-ban van tárolva. Ehhez az NX keretrendszert használjuk.
-
-#### Mappák
-
-* **apps**: Szolgáltatás alkalmazásokat tartalmaz \_service utótaggal és frontend alkalmazásokat \_frontend utótaggal. Ha nincs előtag, a mappa régebbi vagy potenciálisan örökölt projekteket tartalmazhat.
-* **libs**: Megosztott könyvtárakat tartalmaz.
+A fejlesztés elengedhetetlen eszköze a verziókezelő rendszer használata. Az alábbiakban néhány elterjedt gyakorlatot, példát tekintün meg a branch kezeléssel kapcsolatban. A leírás a GIT verziókezelőt tárgyalja.
 
 ### Branching stratégia
 
 #### Branch nevek előtagjai
+
+A branch-ek kezelésében is fontos a konzekcencia. A branch-ek neveit egy / jellel szeparált előtaggal érdemes ellátni, az alábbiak szerint:
 
 * feature/: Specifikus feladatokhoz kapcsolódó branchek.
 * epic/: Nagyabb fejlesztésekhez nyitott branchek, amelyek egy projektcímkével ellátott epichez kapcsolódnak.
@@ -513,81 +515,41 @@ A használhatósági tesztek során valós felhasználókat kérünk meg, hogy v
 
 #### Branch származtatás
 
+Fontos a származtatás, hogy egy branch-ben csak a szükséges inkrementum szerepeljen:
+
 * Az epic branch a develop branchből származik.
 * A feature branchek a develop vagy az epic branchből származnak.
 * A release branchek a develop branchből származnak.
 * A hotfix branchek a master branchből származnak.
 
-#### Rebase
-
-A feature branchekben rebase módszert alkalmazunk.
-
-**1. Checkout feature branch:**
-```bash
-git checkout <feature branch>
-```
-
-**2. Commitok squasholása:**
-```bash
-git rebase -i HEAD~<saját commitok száma>
-```
-
-**3. Squasholt feature branch pusholása:**
-```bash
-git push --force-with-lease
-```
-
-**4. Forrás branch checkout és pull:**
-```bash
-git checkout <epic branch vagy develop>
-<br>git pull
-```
-
-**5. Feature branch checkout és rebase:**
-```bash
-git checkout <feature branch>
-git rebase <epic branch vagy develop>
-git push --force-with-lease
-```
-
-> Ha van egy szülő branched, ami nem a develop (például epic/...), akkor a feature branchedet arra kell rebase-elned! Előtte pedig a szülő branchedet kellene rebase-elned a develop-ra.
+> Megjegyzés: Ahány ház, annyi szokás. Vannak cégek ahol a készítő felhasználónevét adják prefix-nek, máshol a fenti felsorláshoz hasonló előtagokat választanak de eltérő elnevezéssel (pl. feature helyett feat, hotfix helyett fix)
 
 ### Feature branch életciklusa
 
+Az alábbiakban egy valós példát veszünk végig, hogyan alakul egy feature branch éltciklusa. 
+
 #### Branch létrehozása
 
-1. Új funkció esetén a branch az epic branchből jön létre. Ha nincs epic branch, akkor a develop branchből.
-2. A branch nevének tartalmaznia kell a feature/ előtagot és a megfelelő issue azonosítót. Példa: feature/SW-80-single-book-upload.
+- Új funkció esetén a branch az epic branchből jön létre. Ha nincs epic branch, akkor a develop branchből.
+- A branch nevének tartalmaznia kell a feature/ előtagot és a megfelelő issue azonosítót. Példa: feature/SW-80-single-book-upload.
 
-**_8.3.1.1. Wip pr_**
+##### WIP PR
 
-3. Az első push után létre kell hozni egy pull requestet (PR). A címnek tartalmaznia kell a WIP előtagot, hogy megakadályozzuk a merge-elést, amíg a munka folyamatban van.
-4. Az issue azonosítót a PR címében is fel kell tüntetni, hogy az automatizálás összekapcsolhassa a PR-t a hozzá tartozó issue-val.
+- Az első push után létre kell hozni egy pull requestet (PR). A címnek tartalmaznia kell a WIP előtagot, hogy megakadályozzuk a merge-elést, amíg a munka folyamatban van.
+- Az issue azonosítót a PR címében is fel kell tüntetni, hogy az automatizálás összekapcsolhassa a PR-t a hozzá tartozó issue-val.
 
-**_8.3.1.2. Review_**
+##### Review
 
-1. Ha a PR készen áll a review-ra, a WIP előtagot el kell távolítani.
-2. Legalább egy kollégát és a csapatvezetőt is be kell állítani review-erként.
-3. Amikor a review-er változtatásokat kér a PR-on (kommentek hozzáadásával a Gitea-ban): a. a PR szerzőjének el kell végeznie ezeket a változtatásokat és minden egyes kommentet meg kell oldania. b. a PR szerzőjének újra review-t kell kérnie a review-erektől, miután: i. további változtatásokat végzett a PR kezdeti jóváhagyása után. ii. javította a kért változtatásokat.
-4. A PR csak akkor merge-elhető, ha: a. a CI/CD pipeline sikeresen lefutott. b. a review-erek jóváhagyták.
+- Ha a PR készen áll a review-ra, a WIP előtagot el kell távolítani.
+- Legalább egy kollégát és a csapatvezetőt is be kell állítani review-erként.
+- Amikor a review-er változtatásokat kér a PR-on (kommentek hozzáadásával a verziókezelő rendszer felületén): a. a PR szerzőjének el kell végeznie ezeket a változtatásokat és minden egyes kommentet meg kell oldania. b. a PR szerzőjének újra review-t kell kérnie a review-erektől, miután: i. további változtatásokat végzett a PR kezdeti jóváhagyása után. ii. javította a kért változtatásokat.
+- A PR csak akkor merge-elhető, ha: a. a CI/CD pipeline sikeresen lefutott. b. a review-erek jóváhagyták.
 
-**_8.3.1.3. Merge_**
+###### Merge
 
-9. A PR merge-elésekor mindig squash merging\-et használj.
+- A PR merge-elésekor mindig squash merging\-et használj.
 
-### Release branchek
-
-Minden kiadáshoz release brancheket használunk, hogy a develop branch egy adott állapotát tudjuk kiadni, ami csak a szükséges változtatásokat tartalmazza.
-
-#### Névkonvenció
-
-A release/ előtagot az aktuális verzió előzi meg. Példa: release/rc0\_6.3.0
-
-#### Merge stratégia
-
-Amíg egy release branch-csel dolgozunk, "hotfix"-eket lehet alkalmazni rajta, de ezeket a változtatásokat szinkronizálnunk kell a develop\-pal a kiadás után:
-* Sikeres kiadás után a master\-t rebase-elnünk kell a release branch-re, majd végül törölnünk kell azt.
-* A master branch-et is szinkronizálni akarjuk a develop branch-csel, de ebben az esetben merge\-et kell használnunk rebase helyett, hogy elkerüljük a felesleges commitok alkalmazását és a develop branch sérülését (így a develop\-ból létrehozott folyamatban lévő brancheknek csak egy merge commitot kell rebase-elniük).
+> Pro tip: Fontos megjegyezni, hogy ez csak egy módszer, nem aranyszabály. A saját igények szerinti workflow a működő workflow.
 
 ## Tesztelés
 
@@ -602,9 +564,43 @@ Az integrációs tesztek több komponenst vagy modult kapcsolnak össze, és azo
 ### End-to-end (E2E) test
 Az E2E tesztek a teljes alkalmazást a felhasználó szemszögéből szimulálják. Egy teljes felhasználói útvonalat (pl. bejelentkezés, termék kosárba helyezése, fizetés) automatizálnak egy valósághű környezetben. Bár ezek a leglassabb és legbonyolultabb tesztek, a legnagyobb magabiztosságot adják a rendszer üzleti folyamatainak helyes működéséről.
 
+> Pro tip: Az automata tesztek megvalósítása valóban elengedhetetlen előfeltétele a gyors kiadásnak. A gondolat, hogy "majd minden kiadás előtt végignyomkodjuk, nem nincs idő tesztet írni" gyakori tévedés. A jó tesztlefedettség növeli a megbízhatóságot, felhasználóink kisebb eséllyel hagyják el a terméket, mondván, hogy "ez egy bugos vacak".
+
 ## Üzemeltetés
 
 ### Hosting
+
+Szoftver termékünk production rendszerének (de valószínűleg egy vagy több teszt példányának is) a publikus Internetről elérhetőnek kell lennie. Ehhez egy hosting cég szoláltatásait kell igénybe vennünk. Számtalan opció áll a rendelkezésünkre, melyeket nagyvonalakban a következő kategóriákba lehet őket osztani:
+
+**_Self-hosted, saját géppel_**
+
+Saját hardveren fut minden.
+Példa: otthoni rack szerver Ubuntu Serverrel, rajta Docker és egy saját GitLab.
+
+**_Self-hosted, bérelt géppel_**
+
+Bérelt fizikai szerver, de a rendszerért te felelsz.
+Példa: Hetzner vagy OVH dedicated szerver, rajta saját Kubernetes-cluster.
+
+**_Bérelt virtuális gép_**
+
+Virtuális szerver, ahol az OS és appok karbantartása a te dolgod.
+Példa: DigitalOcean Droplet, Linode VPS, Netcup VPS.
+
+**_Bérelt cloud_**
+
+Rugalmas, skálázható infrastruktúra, de üzemeltetés továbbra is kézi.
+Példa: AWS EC2, Azure VM, Google Compute Engine.
+
+**_Menedzselt cloud_**
+
+A szolgáltató intézi a frissítéseket, monitorozást, biztonságot.
+Példa: AWS RDS, Azure App Service, Google Cloud SQL.
+
+**_Provider-függő cloud megoldások_**
+
+Erősen a platformhoz kötött szolgáltatások, gyors fejlesztéssel.
+Példa: AWS Lambda, Google Firebase, Azure Functions.
 
 ### Pipeline
 
@@ -812,34 +808,4 @@ Amennyiben a szervezet olyan eszközt használ, mint a Better Content Archiving,
 
 A dokumentációhoz különféle sablonok is használhatók (például általános oldal, gyűjtőoldal, fejlesztési dokumentációs sablon), amelyek segítik a konzisztens felépítést: címsorstruktúra, dokumentumcél, tartalomjegyzék, kategóriacímkék, automatikusan generált listák és frissítési információk.
 
-A lényeg: a dokumentáció legyen átlátható, egységes felépítésű, visszakereshető, és olyan rendszerben tárolt, amely támogatja a rendszeres karbantartást és a lejárati logikát.
-
-## Linkek
-
-*   Alertmanager
-*   C
-*   Elasticsearch
-*   Fluentd
-*   Git
-*   Gitea
-*   GitLab
-*   Go
-*   Grafana
-*   Hetzner Development Infrastructure
-*   Hotjar
-*   JIRA
-*   Jenkins
-*   Kibana
-*   Loki
-*   Mixpanel
-*   NX
-*   OpenAPI
-*   OpenSearch
-*   Pest
-*   PHP
-*   Prometheus
-*   Pydantic
-*   Python
-*   Rust
-*   TypeScript
-*   YouTrack
+> Pro tip: A lényeg: a dokumentáció legyen átlátható, egységes felépítésű, visszakereshető, és olyan rendszerben tárolt, amely támogatja a rendszeres karbantartást és a lejárati logikát.
