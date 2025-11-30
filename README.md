@@ -602,9 +602,13 @@ Példa: AWS RDS, Azure App Service, Google Cloud SQL.
 Erősen a platformhoz kötött szolgáltatások, gyors fejlesztéssel.
 Példa: AWS Lambda, Google Firebase, Azure Functions.
 
+> Pro tip: Óvakodjunk a vendor-lock-in-től. Igyekezzünk olyan megoldásokat találni amik minden szolgáltatónál futnak, páldául valamilyen Kubernetes cluster-t. Különböző vendor-specific futtatókörnyezetek között költséges a mozgás, minden vendor-nak érdeke az, hogy náluk maradjunk, ezért nem könnyíti meg a helyzetünket.
+
 ### Pipeline
 
 A CI/CD (Continuous Integration/Continuous Deployment) egy olyan gyakorlat, amely automatizálja a szoftverfejlesztés és \-kiadás folyamatait. A cél a kódváltozások gyors, megbízható és automatizált integrálása, tesztelése és telepítése.
+
+Példák a megvalósítást támogató technólógiákra:
 
 #### Jenkins
 
@@ -616,9 +620,13 @@ A GitLab beépített, szorosan integrált CI/CD megoldása, amely lehetővé tes
 
 A Build, Test, Deploy pipeline a CI/CD folyamat gerince. Ez egy automatizált lépéssorozat, amely a kódváltozások repository-ba való feltöltésével indul. A **Build** lépés lefordítja a kódot és összeállítja a futtatható alkalmazást. A **Test** fázisban automatizált tesztek (unit, integration stb.) futnak le a minőségellenőrzés érdekében. Végül a sikeres tesztek után a **Deploy** lépés automatikusan telepíti az alkalmazást a célkörnyezetbe (pl. teszt, éles).
 
+> Pro tip: Az MVP production-ba állítására egy egyszerű pipeline-ra mindenképp szükség van. A pipeline biztosítja a szabványosított release-eket, amikre a kezdeti időszakban valószínűleg gyakran szükség lesz. Válasszunk egyszerű, platformfüggetlen megoldást.
+
 ### Release menedzsment
 
 A release menedzsment a szoftverkiadások tervezésének, ütemezésének, koordinálásának és telepítésének folyamata. Célja, hogy az új verziók zökkenőmentesen, minimális kockázattal és a felhasználók lehető legkisebb zavarásával kerüljenek éles környezetbe. Magában foglalja a verziókövetést, a kiadási stratégiák (pl. Canary, Blue-Green) alkalmazását és a kiadások utáni monitorozást.
+
+Az alábbiakban nézzünk meg néhány kulcsfogalmat amiről érdemes tudnunk:
 
 #### Canary release
 A kanári kiadás egy olyan telepítési stratégia, ahol az új szoftververziót először csak a felhasználók egy kis szegmensének teszik elérhetővé (ők a "kanárik"). A rendszer viselkedését és a felhasználói visszajelzéseket figyelve, ha minden rendben van, a kiadást fokozatosan terjesztik ki a teljes felhasználói bázisra. Ez a módszer csökkenti a hibás kiadásokkal járó kockázatot, mivel egy esetleges probléma csak a felhasználók kis részét érinti.
@@ -641,11 +649,13 @@ A feature flag (funkciózászló) egy szoftver fejlesztési technika, amely lehe
 * **Experiment flags** - A/B tesztek és felhasználó tesztek
 * **Ops flags** - Operatív döntések (terhelés csökkentés, cache kikapcsolás)
 * **Permission flags** - Hozzáférés kontrolálása felhasználócsoportoknak
+
 ### Monitoring
 
 Az üzemeltetés és monitoring célja a szoftver stabil és megbízható működésének biztosítása az éles környezetben. Magában foglalja a rendszer állapotának folyamatos figyelését, a hibák proaktív észlelését és elhárítását, valamint a teljesítmény optimalizálását.
 
 #### Megfigyelhetőség
+
 A megfigyelhetőség (observability) egy rendszer azon képessége, hogy a külső kimenetei (logok, metrikák, trace-ek) alapján megérthető legyen a belső állapota. Nem csupán a "mi romlott el?" kérdésre ad választ, hanem a "miért?"-re is, segítve a komplex, elosztott rendszerek hibakeresését.
 
 #### Naplófájlok
@@ -700,6 +710,8 @@ Az **EFK Stack** (Elasticsearch, Fluent, Kibana) egy népszerű megoldás a logo
   * Logok böngészése és keresése
   * Valós idejű monitorozás
 
+> Megjegyzés: Természetesen választhatunk más eszközket is. Ami fontos, hogy könnyen, gyorsan megjeleníthető metrikáink legyenek, amelyeket könnyen kezelhetnek a szoftverfejlesztéshez és devops-hoz kevésbé értő kollégák is.
+
 #### Audit trail
 
 Az audit trail (auditnapló) egy olyan naplózási mechanizmus, amely időrendi sorrendben rögzíti a rendszerben bekövetkező eseményeket és változásokat (munkafolyamatokba rendezve). Célja a felhasználói és rendszertevékenységek nyomon követhető és ellenőrizhető módon történő dokumentálása.
@@ -707,11 +719,13 @@ Az audit trail (auditnapló) egy olyan naplózási mechanizmus, amely időrendi 
 ##### Célok és előnyök
 
 A fő célok a következők:
+
 * **Nyomon követhetőség** - Felhasználói és rendszertevékenységek rögzítése
 * **Biztonság és megfelelőség** - GDPR, ISO27001, PCI-DSS, NIS2 szabványok betartása
 * **Hibaelhárítás és incidenskezelés** - Gyors problémamegoldás
 
 Az előnyök közé tartozik:
+
 * Átláthatóság a rendszer működésében
 * Adatintegritás biztosítása
 * Megelőzhető csalás és jogosulatlan módosítások
@@ -770,29 +784,42 @@ A **SpanID** egy egyedi azonosító, amely egy adott műveletet vagy tranzakció
 * Egyetlen nyomvonal több spant is tartalmazhat
 * Hierarchikusan vagy szekvenciálisan strukturálhatók
 
-##### Implementáció
-
-**_Technológiák_**
-
-* **Fluent Bit** - Naplófeldolgozó és -továbbító
-* **OpenSearch** - Elosztott, RESTful kereső- és analitikai motor
-* **Kibana** - Adatvizualizációs műszerfal az OpenSearch-höz
-
-**_Opensearch kulcsfogalmai_**
-
-* **Cluster** - Több OpenSearch csomópontból álló rendszer
-* **Node** - Az OpenSearch egy példánya, amely a klaszter része
-* **Index** - Logikai egység, amely adatokat tárol (hasonlóan egy relációs adatbázis táblájához)
-* **Shard** - Egy index több részre osztása a skálázhatóság érdekében
-* **Document** - Egy indexen belül tárolt egyedi adatobjektum (hasonlóan egy relációs adatbázis sorához)
-
 #### Metrikák
 A metrikák numerikus adatok, amelyeket a rendszer teljesítményéről, erőforrás-használatáról (CPU, memória) és viselkedéséről gyűjtünk idősoros formában. A metrikák segítenek a trendek elemzésében, a teljesítményproblémák azonosításában és a kapacitástervezésben.
-* **Prometheus:** A Prometheus egy nyílt forráskódú, idősoros adatbázis alapú monitoring és riasztási rendszer. Pull-alapú modellt használ, azaz periodikusan lekérdezi a metrikákat a monitorozott szolgáltatásoktól (endpointokról). Erőssége a nagy teljesítmény, a hatékony tárolás és a PromQL nevű, kifejező lekérdezőnyelv, amely komplex analízist és riasztási szabályok definiálását teszi lehetővé.
-* **Grafana:** A Grafana egy nyílt forráskódú analitikai és vizualizációs platform, amely lehetővé teszi különböző adatforrások (pl. Prometheus, Loki, Elasticsearch) adatainak lekérdezését, elemzését és gyönyörű, interaktív dashboardokon való megjelenítését. A metrikák és logok vizualizálásának központi eszköze.
 
-#### Riasztások
-A riasztások proaktívan értesítik az üzemeltető csapatot, ha a rendszerben előre definiált küszöbértékeket meghaladó vagy abnormális események történnek. A cél a problémák gyors észlelése és a beavatkozás, még mielőtt a felhasználók észlelnék a hibát. A riasztásokat általában a Prometheus (Alertmanager) vagy a Grafana segítségével konfigurálják.
+**_Prometheus_**
+
+A Prometheus egy nyílt forráskódú, idősoros adatbázis alapú monitoring és riasztási rendszer. Pull-alapú modellt használ, azaz periodikusan lekérdezi a metrikákat a monitorozott szolgáltatásoktól (endpointokról). Erőssége a nagy teljesítmény, a hatékony tárolás és a PromQL nevű, kifejező lekérdezőnyelv, amely komplex analízist és riasztási szabályok definiálását teszi lehetővé.
+
+**_Grafana_**
+
+A Grafana egy nyílt forráskódú analitikai és vizualizációs platform, amely lehetővé teszi különböző adatforrások (pl. Prometheus, Loki, Elasticsearch) adatainak lekérdezését, elemzését és gyönyörű, interaktív dashboardokon való megjelenítését. A metrikák és logok vizualizálásának központi eszköze.
+
+**_Mixpanel_**
+
+Felhasználói viselkedésre fókuszáló analitikai eszköz. Nem rendszerszintű metrikákat gyűjt, hanem eseményeket, funnel-adatokat és user-szintű aktivitást. Segít megérteni, hogyan használják az alkalmazást, és mely funkciók teljesítenek jól.
+
+### Riasztások
+
+A riasztások előre megadott küszöbök vagy rendellenes működés alapján értesítik az üzemeltetőket, hogy a hibák még a felhasználók előtt észlelhetők legyenek. A konfigurációt többnyire Prometheus Alertmanagerrel vagy Grafanával végzik.
+
+Példák a technológiai megvalósításra:
+
+**_Prometheus + Alertmanager_**
+
+Metrikaalapú riasztások CPU-, memória-, latency- vagy rendelkezésreállási problémákra.
+
+**_Grafana Alerts_**
+
+Dashboardokból definiált riasztások bármely csatlakoztatott adatforrásra.
+
+**_Sentry_**
+
+Alkalmazásszintű hibák, exceptionök és teljesítményanomáliák automatikus riasztása (stack trace-szel).
+
+**_Nagios_**
+
+Klasszikus infrastruktúra-monitoring riasztások szerverek, hálózati eszközök és szolgáltatások állapotára (ping, disk, service health).
 
 ## Dokumentáció
 
